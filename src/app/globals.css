@@ -31,3 +31,9 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.custom-gradient {
+  background: rgb(101,237,171);
+  background: linear-gradient(320deg, rgba(101,237,171,1) 0%, rgba(140,233,129,1) 74%, rgba(124,185,62,1) 100%);
+}
