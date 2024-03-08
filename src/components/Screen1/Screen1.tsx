@@ -14,7 +14,7 @@ export const Screen1 = () => {
                 <Image
                     src={PhonePng}
                     alt="Phone"
-                    style={{ transform: "scale(1)", translate: "-10%" }}
+                    style={{ transform: "scale(1)", translate: "0%" }}
                 />
             </div>
         </div>
