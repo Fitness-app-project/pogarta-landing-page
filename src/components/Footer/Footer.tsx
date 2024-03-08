@@ -7,7 +7,7 @@ export const Footer = () => {
     return (
         <div className="custom-gradient-footer w-screen h-full px-40 pt-20 pb-32 flex justify-evenly">
 
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-10 ">
                 <Image 
                     alt="Logo"
                     src={PogartaCiemnaPng}
@@ -16,9 +16,9 @@ export const Footer = () => {
                     style={{ transform: "scale(2.2)", translate: "40px" }}
                 />
 
-                <h2 className="custom-text-gradient text-4xl font-semibold tracking-wide">Kariera w Pogarta</h2>
+                {/*<h2 className="custom-text-gradient text-4xl font-semibold tracking-wide">Kariera w Pogarta</h2>*/}
 
-                <span className="text-xl font-medium leading-9">Zatrudniamy!<br /> Przejdz na strone Kariera i <br /> sprawdz nasze oferty!</span>
+                {/*<span className="text-xl font-medium leading-9">Zatrudniamy!<br /> Przejdz na strone Kariera i <br /> sprawdz nasze oferty!</span>*/}
             </div>
 
             <div className="flex flex-col gap-2">
