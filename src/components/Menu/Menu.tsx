@@ -1,5 +1,4 @@
-import PogartaCiemnaPng from "/public/images/Pogarta_ciemna.png"
-import PogartaJasnaPng from "/public/images/Pogarta_jasna.png"
+import PogartaPng from "/public/images/Pogarta.png"
 
 import Image from "next/image"
 
@@ -11,7 +10,7 @@ export const Menu = () => {
             <div className="flex items-center">
                 <Image 
                     alt="Logo"
-                    src={PogartaCiemnaPng}
+                    src={PogartaPng}
                     width={100}
                     height={100}
                     style={{ transform: "scale(2)", translate: "40px" }}
