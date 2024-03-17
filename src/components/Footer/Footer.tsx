@@ -44,7 +44,7 @@ export const Footer = () => {
       <div className="flex flex-col text-white ml-40 ">
         <h2 className="text-4xl font-semibold text-[#A98C53] tracking-widest">Contact us:</h2>
         <p className="mt-4 text-xl ">
-        If you're interested in collaborating<br/> or have any questions,<br/> don&apos;t hesitate to contact us!<br/>
+        If you&apos;re interested in collaborating<br/> or have any questions,<br/> don&apos;t hesitate to contact us!<br/>
 
           <span className="font-extrabold mt-2 ">Call or text</span>
         </p>
