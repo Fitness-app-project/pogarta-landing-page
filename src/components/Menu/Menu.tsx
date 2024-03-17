@@ -7,7 +7,7 @@ export const Menu = () => {
 
     return (
         <div className="w-full h-full flex justify-between items-center py-6">
-            <div className="flex items-center">
+            <div className="flex items-center z-10">
                 <Image 
                     alt="Logo"
                     src={PogartaPng}
