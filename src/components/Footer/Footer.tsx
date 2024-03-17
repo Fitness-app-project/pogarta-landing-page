@@ -13,8 +13,8 @@ export const Footer = () => {
     <footer className="bg-[#222222] w-screen px-10 pt-20 pb-32 flex justify-center items-start">
 
     <div className="flex flex-col mr-40 ">
-        <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest">Any Questions?</h2>
-        <div className="flex items-center mt-10">
+        <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest ml-5">Any Questions?</h2>
+        {/* <div className="flex items-center mt-10">
             <Image 
                 alt="Logo"
                 src={PogartaPng}
@@ -22,7 +22,7 @@ export const Footer = () => {
                 height={100}
                 style={{ transform: "scale(2)", translate: "40px" }}
             />
-        </div>
+        </div> */}
         <div className="flex flex-col justify-center mr-10 ">
         <div className="flex flex-wrap items-center mt-10">
             <Image alt="EBA" src={EBA} width={100} height={100}  />
