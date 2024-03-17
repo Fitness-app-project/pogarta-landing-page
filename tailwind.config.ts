@@ -11,7 +11,7 @@ const config: Config = {
       height: {
         '142': '35.5rem',
         '252': '252px', 
-        'screen1': '480px', 
+        'screen1': '600px', 
       },
             
       backgroundImage: {
