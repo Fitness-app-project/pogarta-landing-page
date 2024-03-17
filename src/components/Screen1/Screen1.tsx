@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image"
 import bg from "/public/images/bg.svg"
 import SPM from "/public/images/Sic_Parvis_Magna.svg"
