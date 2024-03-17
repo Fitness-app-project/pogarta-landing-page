@@ -16,7 +16,7 @@ export const Menu = () => {
                     style={{ transform: "scale(2)", translate: "40px" }}
                 />
             </div>
-            <div className="flex justify-evenly items-center gap-24 text-xl ">
+            <div className="flex justify-evenly items-center gap-12 text-xl ">
                 <button className="tracking-widest  ">Home</button>
                 <button className="tracking-widest ">Portfolio</button>
                 <button className="tracking-widest  ">About us</button>
