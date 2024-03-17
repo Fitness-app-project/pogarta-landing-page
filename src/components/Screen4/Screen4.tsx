@@ -39,24 +39,44 @@ export const Screen4 = () => {
       altText: 'Loreal',
     },
     {
-        logo: `${imagePath}Spotify.svg`,
-        text: 'Stream millions of songs and podcasts.',
-        altText: 'Spotify',
+        logo: `${imagePath}JD-sports.svg`,
+        text: 'Retailer of sports fashion and sneakers.',
+        altText: 'JD-sports',
       },
       {
-        logo: `${imagePath}Sony.svg`,
-        text: 'Electronics and entertainment.',
-        altText: 'Sony',
+        logo: `${imagePath}Segro.svg`,
+        text: 'Real estate services.',
+        altText: 'Segro',
       },
       {
-        logo: `${imagePath}Revolut.svg`,
-        text: 'Digital banking and financial services.',
-        altText: 'Revolut',
+        logo: `${imagePath}Nissan.svg`,
+        text: 'Car tech and EVs.',
+        altText: 'Nissan',
       },
       {
-        logo: `${imagePath}Loreal.svg`,
-        text: 'Beauty and cosmetics.',
-        altText: 'Loreal',
+        logo: `${imagePath}Allianz.svg`,
+        text: 'Insurance and financial products.',
+        altText: 'Allianz',
+      },
+      {
+        logo: `${imagePath}JD-sports.svg`,
+        text: 'Retailer of sports fashion and sneakers.',
+        altText: 'JD-sports',
+      },
+      {
+        logo: `${imagePath}Segro.svg`,
+        text: 'Real estate services.',
+        altText: 'Segro',
+      },
+      {
+        logo: `${imagePath}Nissan.svg`,
+        text: 'Car tech and EVs.',
+        altText: 'Nissan',
+      },
+      {
+        logo: `${imagePath}Allianz.svg`,
+        text: 'Insurance and financial products.',
+        altText: 'Allianz',
       },
 
     
@@ -64,7 +84,7 @@ export const Screen4 = () => {
   ];
 
   return (
-    <div className="flex flex-wrap justify-center items-center bg-white w-screen">
+    <div className="grid grid-cols-5 gap-4 bg-white w-screen px-64">
       {companies.map((company, index) => (
         <CompanyCell key={index} logo={company.logo} text={company.text} altText={company.altText} />
       ))}
