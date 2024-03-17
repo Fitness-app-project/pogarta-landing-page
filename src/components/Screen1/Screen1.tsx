@@ -4,7 +4,7 @@ import SPM from "/public/images/Sic_Parvis_Magna.svg"
 
 export const Screen1 = () => {
     return (
-      <div className="w-full h-screen1 flex flex-col justify-center items-center text-[#D9B55E] relative">
+      <div className="w-full h-screen1 flex flex-col justify-center items-center text-[#D9B55E] ">
         <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-0" />
         <Image src={SPM} alt="Sic Parvis Magna" className="z-10 mb-5" />
         <p className="text-lg tracking-widest text-[#747474] z-10">
