@@ -1,4 +1,4 @@
-import PogartaPng from "/public/images/Pogarta.png"
+import PogartaSvg from "/public/images/Pogarta.svg"
 
 import Image from "next/image"
 
@@ -10,7 +10,7 @@ export const Menu = () => {
             <div className="flex items-center z-10">
                 <Image 
                     alt="Logo"
-                    src={PogartaPng}
+                    src={PogartaSvg}
                     width={100}
                     height={100}
                     style={{ transform: "scale(2)", translate: "40px" }}
