@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat as MontserratFont } from "next/font/google";
 import "./globals.css";
+import PogartaSvgMini from "/public/images/PogartaMini.svg"
+
 
 const Montserrat = MontserratFont({ subsets: ["latin"] });
 
