@@ -1,4 +1,5 @@
 import { Footer } from "@/components/Footer/Footer";
+import { FooterBar } from "@/components/FooterBar/FooterBar";
 import { Menu } from "@/components/Menu/Menu";
 import { Screen1 } from "@/components/Screen1/Screen1";
 import { Screen2 } from "@/components/Screen2/Screen2";
@@ -20,6 +21,7 @@ export default function Home() {
       <Screen6 />
       <Screen7 />
       <Footer />
+      <FooterBar/>
     </main>
   );
 }
