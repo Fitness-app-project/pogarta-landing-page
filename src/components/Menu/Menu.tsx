@@ -16,11 +16,11 @@ export const Menu = () => {
                     style={{ transform: "scale(2)", translate: "40px" }}
                 />
             </div>
-            <div className="flex justify-evenly items-center gap-24 text-xl uppercase">
-                <button className="uppercase tracking-widest">Strona Główna</button>
-                <button className="uppercase tracking-widest">O nas</button>
-                <button className="uppercase tracking-widest">portfolio</button>
-                <button className="uppercase tracking-widest">kontakt</button>
+            <div className="flex justify-evenly items-center gap-24 text-xl ">
+                <button className="tracking-widest  ">Home</button>
+                <button className="tracking-widest ">Portfolio</button>
+                <button className="tracking-widest  ">About us</button>
+                <button className="tracking-widest ">Contact</button>
             </div>
         </div>
     )

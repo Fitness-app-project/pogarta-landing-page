@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat as MontserratFont } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const Montserrat = MontserratFont({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Pogarta",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html data-theme="light" lang="en" >
-      <body className={inter.className}>{children}</body>
+      <body className={Montserrat.className}>{children}</body>
     </html>
   );
 }

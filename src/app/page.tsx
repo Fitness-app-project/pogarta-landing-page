@@ -10,7 +10,7 @@ import { Screen7 } from "@/components/Screen7/Screen7";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center px-60 overflow-hidden text-[#4f5155]">
+    <main className="flex min-h-screen flex-col items-center px-60 overflow-hidden text-[#FDFDFD]">
       <Menu />
       <Screen1 />
       <Screen2 />
