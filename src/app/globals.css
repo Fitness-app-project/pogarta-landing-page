@@ -21,7 +21,7 @@
   font-family: 'Cinzel', serif;
 }
 ::-webkit-scrollbar {
-  display: none; /* dla przeglądarek opartych na Webkit i Blink */
+  display: none; 
 }
 body {
   color: rgb(var(--foreground-rgb));
