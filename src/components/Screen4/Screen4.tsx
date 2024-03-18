@@ -58,64 +58,64 @@ export const Screen4 = () => {
         altText: 'Allianz',
       },
       {
-        logo: `${imagePath}JD-sports.svg`,
-        text: 'Retailer of sports fashion and sneakers.',
-        altText: 'JD-sports',
+        logo: `${imagePath}Hp.svg`,
+        text: 'Computing and printing tech.',
+        altText: 'Hp',
       },
       {
-        logo: `${imagePath}Segro.svg`,
-        text: 'Real estate services.',
-        altText: 'Segro',
+        logo: `${imagePath}Walmart.svg`,
+        text: 'Retail innovation and online shopping.',
+        altText: 'Walmart',
       },
       {
-        logo: `${imagePath}Nissan.svg`,
-        text: 'Car tech and EVs.',
-        altText: 'Nissan',
+        logo: `${imagePath}Dropbox.svg`,
+        text: 'Secure cloud storage and file sharing.',
+        altText: 'Dropbox',
       },
       {
-        logo: `${imagePath}Allianz.svg`,
-        text: 'Insurance and financial products.',
-        altText: 'Allianz',
+        logo: `${imagePath}Bayer.svg`,
+        text: 'Crop and healthcare tech.',
+        altText: 'Bayer',
       },
       {
-        logo: `${imagePath}Spotify.svg`,
-        text: 'Stream millions of songs and podcasts.',
-        altText: 'Spotify',
+        logo: `${imagePath}ValeBrasil.svg`,
+        text: 'Efficient mining and resource extraction.',
+        altText: 'ValeBrasil',
       },
       {
-        logo: `${imagePath}Sony.svg`,
-        text: 'Electronics and entertainment.',
-        altText: 'Sony',
+        logo: `${imagePath}DHL.svg`,
+        text: 'Shipping and logistics.',
+        altText: 'DHL',
       },
       {
-        logo: `${imagePath}Revolut.svg`,
-        text: 'Digital banking and financial services.',
-        altText: 'Revolut',
+        logo: `${imagePath}Tecnifibre.svg`,
+        text: 'Tennis and squash equipment.',
+        altText: 'Tecnifibre',
       },
       {
-        logo: `${imagePath}Loreal.svg`,
-        text: 'Beauty and cosmetics.',
-        altText: 'Loreal',
+        logo: `${imagePath}HBO.svg`,
+        text: 'Premium television and streaming.',
+        altText: 'HBO',
       },
       {
-          logo: `${imagePath}JD-sports.svg`,
-          text: 'Retailer of sports fashion and sneakers.',
-          altText: 'JD-sports',
+          logo: `${imagePath}CDProject.svg`,
+          text: 'Game development and distribution.',
+          altText: 'CDProject',
         },
         {
-          logo: `${imagePath}Segro.svg`,
-          text: 'Real estate services.',
-          altText: 'Segro',
+          logo: `${imagePath}Starbucks.svg`,
+          text: 'Specialty coffee and tea.',
+          altText: 'Starbucks',
         },
         {
-          logo: `${imagePath}Nissan.svg`,
-          text: 'Car tech and EVs.',
-          altText: 'Nissan',
+          logo: `${imagePath}Y-Combinator.svg`,
+          text: 'Startup accelerator and funding.',
+          altText: 'Y-Combinator',
         },
         {
-          logo: `${imagePath}Allianz.svg`,
-          text: 'Insurance and financial products.',
-          altText: 'Allianz',
+          logo: `${imagePath}Pearson.svg`,
+          text: 'Educational materials and services.',
+          altText: 'Pearson',
         },
   ];
 
@@ -123,10 +123,9 @@ export const Screen4 = () => {
     <div>
       <div className=" flex flex-col items-center text-center p-4 px-64   bg-white">
       <h1 className="text-6xl font-elegant text-deep-ocean mt-10 leading-tight text-gray-600">
-      Shaping the future of tech. <br />Expanding possibilities. <br />
-      We deliver innovative solutions tailored for the ever-evolving business landscape.
- </h1>
-    <p className="text-lg mt-4  text-gray-600 italic">
+      Imagine Innovate Implement 
+      </h1>
+    <p className="text-lg mt-10  text-gray-600 italic">
     Trusted by industry leaders, see who we’ve helped thrive.
   </p>
       </div>
