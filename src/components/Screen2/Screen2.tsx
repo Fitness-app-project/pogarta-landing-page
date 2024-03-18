@@ -4,7 +4,7 @@ export const Screen2 = () => {
         <div className="w-screen h-full flex flex-col items-center z-1">
            
 
-            <div className="w-screen flex  justify-evenly  text-[#FFFFFF] bg-[#000000] bg-opacity-10 h-[200px] z-1 ">
+            <div className="w-screen flex  justify-evenly  text-[#FFFFFF] bg-[#000000] bg-opacity-10 h-[230px] z-1 ">
 
                 <div className="flex inset-0 items-center gap-8 w-[280px] h-[70px] px-2 m-auto z-10  ">
                     <span className="text-[#886A38] text-5xl font-extrabold">5+</span>
