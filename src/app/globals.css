@@ -20,7 +20,9 @@
 .font-cinzel {
   font-family: 'Cinzel', serif;
 }
-
+::-webkit-scrollbar {
+  display: none; /* dla przeglądarek opartych na Webkit i Blink */
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
