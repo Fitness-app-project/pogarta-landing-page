@@ -1,17 +1,26 @@
-import { Cell } from "./components/Cell"
+"use client"
 
+import { motion } from "framer-motion";
 import Image from 'next/image';
+
 const imagePath = "/images/Screen4images/";
+
 const CompanyCell = ({ logo, text, altText }: { logo: string, text: string, altText: string }) => {
     return (
-        <div className="flex flex-col items-center text-center p-4 mt-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center text-center p-4 mt-10"
+        >
             <div className="relative flex justify-center items-center w-32 h-32">
                 <Image src={logo} alt={altText} layout="fill" objectFit="contain" />
             </div>
             <div className="mt-2 flex flex-col items-center text-center p-4">
                 <p className="text-sm text-[#383838]">{text}</p>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
@@ -122,17 +131,17 @@ export const Screen4 = () => {
   return (
     <div>
       <div className=" flex flex-col items-center text-center p-4 px-64   bg-white">
-      <h1 className="text-6xl font-elegant text-deep-ocean mt-10 leading-tight text-gray-600">
-      Imagine Innovate Implement 
-      </h1>
-    <p className="text-lg mt-10  text-gray-600 italic">
-    Trusted by industry leaders, see who we’ve helped thrive.
-  </p>
+        <h1 className="text-6xl font-elegant text-deep-ocean mt-10 leading-tight text-gray-600">
+          Imagine Innovate Implement 
+        </h1>
+        <p className="text-lg mt-10  text-gray-600 italic">
+          Trusted by industry leaders, see who we’ve helped thrive.
+        </p>
       </div>
       <div className="grid grid-cols-5 gap-4 bg-white w-screen px-64 mb">
-        {companies.map((company, index) => (
-          <CompanyCell key={index} logo={company.logo} text={company.text} altText={company.altText} />
-        ))}
+          {companies.map((company, index) => (
+            <CompanyCell key={index} logo={company.logo} text={company.text} altText={company.altText} />
+          ))}
       </div>
     </div>
   );

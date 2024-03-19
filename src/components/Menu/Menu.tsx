@@ -1,5 +1,7 @@
-import PogartaSvg from "/public/images/Pogarta.svg"
+"use client"
 
+import { motion } from "framer-motion"
+import PogartaSvg from "/public/images/Pogarta.svg"
 import Image from "next/image"
 
 
@@ -7,7 +9,12 @@ export const Menu = () => {
 
     return (
         <div className="w-full h-full flex justify-between items-center py-6">
-            <div className="flex items-center z-10">
+            <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center z-10"
+            >
                 <Image 
                     alt="Logo"
                     src={PogartaSvg}
@@ -15,7 +22,7 @@ export const Menu = () => {
                     height={100}
                     style={{ transform: "scale(2)", translate: "40px" }}
                 />
-            </div>
+            </motion.div>
             <div className="flex justify-evenly items-center gap-12 text-xl ">
                 <button className="tracking-widest  ">Home</button>
                 <button className="tracking-widest ">Portfolio</button>
