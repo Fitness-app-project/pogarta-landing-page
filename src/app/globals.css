@@ -56,3 +56,14 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+.highlighted-text {
+  transition: clip-path 0.1s ease;
+  text-shadow: 0 0 0 #111;
+}
+
+.highlighted-text:before {
+  content: attr(data-text);
+  display: inline-block;
+  opacity: 0.8;
+}

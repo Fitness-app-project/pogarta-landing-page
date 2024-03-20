@@ -15,7 +15,7 @@ export default function Home() {
       <Menu />
       <Screen1 />
       <Screen2 />
-      {/* <Screen3 /> */}
+      <Screen3 />
       <Screen4 />
       {/* <Screen5 /> */}
       {/* <Screen6 /> */}
