@@ -37,9 +37,9 @@ export const Screen4 = () => {
       altText: 'Sony',
     },
     {
-      logo: `${imagePath}Revolut.svg`,
-      text: 'Fraud detection system to enhance security and user trust.',
-      altText: 'Revolut',
+      logo: `${imagePath}Hitachi.svg`,
+      text: 'Smart factory automation platform to boost productivity and minimize errors.',
+      altText: 'Hitachi',
     },
     {
       logo: `${imagePath}Loreal.svg`,
