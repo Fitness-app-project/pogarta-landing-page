@@ -3,6 +3,8 @@ import { motion, useMotionTemplate, useScroll, useTransform } from 'framer-motio
 import Image from 'next/image';
 import { useRef } from 'react';
 import { FaLongArrowAltRight } from 'react-icons/fa';
+import useTypewriter from 'react-typewriter-hook/build/useTypewriter';
+import Typewriter from './components/Typewriter';
 
 const content = [
     "We build new ventures and non-standard",
@@ -69,19 +71,19 @@ export const Screen3 = () => {
                     />
                 </motion.div>
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 3 }}
-                    viewport={{ once: true }}
-                    className="pl-[320px] pt-[30px]"
-                >
-                    <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
-                        Building new ventures
-                    </h3>
-                    <p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
-                        We create projects from scratch. <br />Our well-coordinated, experienced team,<br /> knowledge and a good plan are the<br /> key to the success of many projects.
-                    </p>
-                </motion.div>
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 3 }}
+  viewport={{ once: true }}
+  className="pl-[320px] pt-[30px]"
+>
+  <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
+    <Typewriter text="Building new ventures" />
+  </h3>
+  <p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
+    <Typewriter text="We create projects from scratch. Our well-coordinated, experienced team, knowledge and a good plan are the key to the success of many projects." />
+  </p>
+</motion.div>
             </div>
 
 
@@ -100,20 +102,25 @@ export const Screen3 = () => {
                         height={400}
                     />
                 </motion.div>
+                
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 3 }}
-                    viewport={{ once: true }}
-                    className="pl-[320px] pt-[30px]"
-                >
-                    <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
-                        Scaling-up businesses
-                    </h3>
-                    <p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
-                        Our expertise from launching and scaling various<br /> tech ventures enables us to assist early-stage<br /> startups and their founders. Collaboratively, we<br /> expedite startup growth, propelling them towards<br /> international triumph.
-                    </p>
-                </motion.div>
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 3 }}
+  viewport={{ once: true }}
+  className="pl-[320px] pt-[30px]"
+>
+  <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
+  <Typewriter text="Scaling-up businesses" />
+  </h3>
+  <p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
+  <Typewriter text="Our expertise from launching and scaling various
+tech ventures enables us to assist early-stage
+startups and their founders. Collaboratively, we
+expedite startup growth, propelling them towards
+international triumph." />
+  </p>
+</motion.div>
             </div>
 
             <div className='flex items-center gap-10 mt-32'>
@@ -128,7 +135,7 @@ export const Screen3 = () => {
 
                 <div className="flex flex-col items-center gap-5">
                     <motion.span
-                        initial={{ scale: 3 }}
+                        initial={{ scale: 2 }}
                         whileInView={{ scale: 1 }}
                         transition={{ duration: 1 }}
                         viewport={{ once: true }}
@@ -144,7 +151,7 @@ export const Screen3 = () => {
                 
                 <div className="flex flex-col items-center gap-5">
                     <motion.span
-                        initial={{ scale: 3 }}
+                        initial={{ scale: 2 }}
                         whileInView={{ scale: 1 }}
                         transition={{ duration: 1 }}
                         viewport={{ once: true }}
@@ -159,7 +166,7 @@ export const Screen3 = () => {
 
                 <div className="flex flex-col items-center gap-5">
                     <motion.span
-                        initial={{ scale: 3 }}
+                        initial={{ scale: 2 }}
                         whileInView={{ scale: 1 }}
                         transition={{ duration: 1 }}
                         viewport={{ once: true }}
