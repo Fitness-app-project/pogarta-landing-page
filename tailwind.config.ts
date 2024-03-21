@@ -13,6 +13,9 @@ const config: Config = {
         '252': '252px', 
         'screen1': '600px', 
       },
+      fontSize: {
+        'PogartaS1': '15rem',
+      },
             
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
