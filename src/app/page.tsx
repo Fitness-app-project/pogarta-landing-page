@@ -1,3 +1,4 @@
+import CustomCursor from "@/components/CustomCursor/CustomCursor";
 import { Footer } from "@/components/Footer/Footer";
 import { FooterBar } from "@/components/FooterBar/FooterBar";
 import { Menu } from "@/components/Menu/Menu";
@@ -11,17 +12,20 @@ import { Screen7 } from "@/components/Screen7/Screen7";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center px-60 overflow-hidden text-[#FDFDFD]">
-      <Menu />
-      <Screen1 />
-      <Screen2 />
-      <Screen3 />
-      <Screen4 />
-      {/* <Screen5 /> */}
-      {/* <Screen6 /> */}
-      <Screen7 />
-      <Footer />
-      <FooterBar/>
-    </main>
+    <>
+      <CustomCursor />
+      <main className="flex min-h-screen flex-col items-center px-60 overflow-hidden text-[#FDFDFD]">
+        <Menu />
+        <Screen1 />
+        <Screen2 />
+        <Screen3 />
+        <Screen4 />
+        {/* <Screen5 /> */}
+        {/* <Screen6 /> */}
+        <Screen7 />
+        <Footer />
+        <FooterBar/>
+      </main>
+    </>
   );
 }
