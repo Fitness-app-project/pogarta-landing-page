@@ -67,3 +67,7 @@ body {
   display: inline-block;
   opacity: 0.8;
 }
+
+.buttonBgTransparent {
+  background-color: rgba(74, 74, 74, 0.3);
+}
