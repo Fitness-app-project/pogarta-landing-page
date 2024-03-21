@@ -13,19 +13,20 @@ import { Screen7 } from "@/components/Screen7/Screen7";
 export default function Home() {
   return (
     <>
-      <CustomCursor />
-      <main className="flex min-h-screen flex-col items-center px-60 overflow-hidden text-[#FDFDFD]">
-        <Menu />
-        <Screen1 />
-        <Screen2 />
-        <Screen3 />
-        <Screen4 />
-        {/* <Screen5 /> */}
-        {/* <Screen6 /> */}
-        <Screen7 />
-        <Footer />
-        <FooterBar/>
-      </main>
+    <CustomCursor />
+    <main className="flex min-h-screen flex-col items-center px-60 overflow-hidden text-[#FDFDFD]">
+      <Menu />
+      <Screen1 />
+      <Screen2 />
+      <Screen3 />
+      <Screen4 />
+      {/* <Screen5 /> */}
+      {/* <Screen6 /> */}
+      <Screen7 />
+      <Footer />
+      <FooterBar/>
+    </main>
     </>
+
   );
 }
