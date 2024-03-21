@@ -54,40 +54,66 @@ export const Screen3 = () => {
             </div>
             
             <div className="mt-32 flex w-[900px] relative">
-                <Image
-                    alt='Coin'
-                    src="/images/coin1.png"
-                    width={400}
-                    height={400}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 3 }}
+                    viewport={{ once: true }}
                     className='absolute'
-                />
-                <div className="pl-[320px] pt-[30px]">
+                >
+                    <Image
+                        alt='Coin'
+                        src="/images/coin1.png"
+                        width={400}
+                        height={400}
+                    />
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 3 }}
+                    viewport={{ once: true }}
+                    className="pl-[320px] pt-[30px]"
+                >
                     <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
                         Building new ventures
                     </h3>
                     <p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
                         We create projects from scratch. <br />Our well-coordinated, experienced team,<br /> knowledge and a good plan are the<br /> key to the success of many projects.
                     </p>
-                </div>
+                </motion.div>
             </div>
 
 
             <div className="mt-32 flex w-[960px]">
-                <Image
-                    alt='Coin'
-                    src="/images/coin2.png"
-                    width={400}
-                    height={400}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 3 }}
+                    viewport={{ once: true }}
                     className='absolute'
-                />
-                <div className="pl-[320px] pt-[30px]">
+                >
+                    <Image
+                        alt='Coin'
+                        src="/images/coin2.png"
+                        width={400}
+                        height={400}
+                    />
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 3 }}
+                    viewport={{ once: true }}
+                    className="pl-[320px] pt-[30px]"
+                >
                     <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
                         Scaling-up businesses
                     </h3>
                     <p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
                         Our expertise from launching and scaling various<br /> tech ventures enables us to assist early-stage<br /> startups and their founders. Collaboratively, we<br /> expedite startup growth, propelling them towards<br /> international triumph.
                     </p>
-                </div>
+                </motion.div>
             </div>
 
             <div className='flex items-center gap-10 mt-32'>
@@ -101,9 +127,15 @@ export const Screen3 = () => {
             <div className="flex justify-evenly items-center mt-12 gap-16">
 
                 <div className="flex flex-col items-center gap-5">
-                    <span className="font-bold text-[60px] leading-[73px] text-[#DBB75F]">
+                    <motion.span
+                        initial={{ scale: 3 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 1 }}
+                        viewport={{ once: true }}
+                        className="font-bold text-[60px] leading-[73px] text-[#DBB75F]"
+                    >
                         20
-                    </span>
+                    </motion.span>
                     <p className="font-normal text-[20px] leading-[24px] tracking-widest text-white text-center uppercase">
                         Portfolio companies
                     </p>
@@ -111,18 +143,30 @@ export const Screen3 = () => {
                 </div>
                 
                 <div className="flex flex-col items-center gap-5">
-                    <span className="font-bold text-[60px] leading-[73px] text-[#DBB75F]">
+                    <motion.span
+                        initial={{ scale: 3 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 1 }}
+                        viewport={{ once: true }}
+                        className="font-bold text-[60px] leading-[73px] text-[#DBB75F]"
+                    >
                         350
-                    </span>
+                    </motion.span>
                     <p className="font-normal text-[20px] leading-[24px] tracking-widest text-white text-center uppercase">
                     People involved <br />in our projects
                     </p>
                 </div>
 
                 <div className="flex flex-col items-center gap-5">
-                    <span className="font-bold text-[60px] leading-[73px] text-[#DBB75F]">
+                    <motion.span
+                        initial={{ scale: 3 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 1 }}
+                        viewport={{ once: true }}
+                        className="font-bold text-[60px] leading-[73px] text-[#DBB75F]"
+                    >
                         7
-                    </span>
+                    </motion.span>
                     <p className="font-normal text-[20px] leading-[24px] tracking-widest text-white text-center uppercase">
                     Months to launch <br />a new venture
                     </p>
