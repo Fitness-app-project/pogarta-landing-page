@@ -45,9 +45,6 @@ const AnimatedBackground = () => {
         this.y += this.weight;
         this.weight += 0.2;
       
-        if (this.y > canvas.height - this.size) {
-          this.weight *= -0.2;
-        }
       }
     }
 
@@ -78,7 +75,7 @@ const AnimatedBackground = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute w-full h-full" />;
+  return <canvas ref={canvasRef} className="absolute w-full h-100 " />;
 };
 
 export default AnimatedBackground;
