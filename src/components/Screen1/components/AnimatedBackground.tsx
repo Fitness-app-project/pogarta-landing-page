@@ -75,7 +75,7 @@ const AnimatedBackground = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute w-full h-100 " />;
+  return <canvas ref={canvasRef} className="absolute w-full h-full " />;
 };
 
 export default AnimatedBackground;
