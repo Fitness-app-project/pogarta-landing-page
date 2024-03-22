@@ -13,7 +13,7 @@ export const Footer = () => {
     <footer className="bg-[#222222] w-screen px-10 pt-20 pb-32 flex justify-center items-start">
 
     <div className="flex flex-col mr-40 ">
-    <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest ml-5">It&apos;s a great day!</h2>
+    <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest ml-5">Let&apos;s talk</h2>
             {/* <div className="flex items-center mt-10">
             <Image 
                 alt="Logo"
@@ -44,11 +44,13 @@ export const Footer = () => {
       <div className="flex flex-col text-white ml-40 ">
         <h2 className="text-4xl font-semibold text-[#A98C53] tracking-widest">Contact us:</h2>
         <p className="mt-4 text-xl ">
-        If you&apos;re interested in collaborating<br/> or have any questions,<br/> don&apos;t hesitate to contact us!<br/>
+          Custom Solutions for Your Specific Needs. <br />
+          Our Expert Team will Help You Succeed. <br />
 
-          <span className="font-extrabold mt-2 ">Call or text</span>
         </p>
         <div className="flex flex-col gap-4 font-bold text-xl mt-2">
+        <span className="font-extrabold mt- ">Call or text</span>
+
           <span>+48 123 456 789</span>
           <span>+48 123 456 789</span>
           <span>hello@pogarta.com</span>
