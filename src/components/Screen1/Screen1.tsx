@@ -1,7 +1,6 @@
 'use client'
 import { motion } from "framer-motion";
 import Image from "next/image"
-import bg from "/public/images/bgwhite.svg"
 import SPM from "/public/images/Sic_Parvis_Magna.svg"
 import AnimatedBackground from "@/components/Screen1/components/AnimatedBackground";
 
