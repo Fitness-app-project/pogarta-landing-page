@@ -12,11 +12,15 @@ const CompanyCell = ({ logo, text, altText }: { logo: string, text: string, altT
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
+          // whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
+          whileHover={{ scale: 1.2, transition: { duration: 0.3 }, zIndex: 2 }}
+
           className="flex flex-col items-center text-center p-4 mt-10"
         >
-            <div className="relative flex justify-center items-center w-32 h-32">
-                <Image src={logo} alt={altText} layout="fill" objectFit="contain" />
-            </div>
+            <motion.div className="relative flex justify-center items-center w-32 h-32" animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+    <Image src={logo} alt={altText} layout="fill" objectFit="contain" />
+</motion.div>
+
             <div className="mt-2 flex flex-col items-center text-center p-4">
                 <p className=" text-[#383838] text-xs ">{text}</p>
             </div>
