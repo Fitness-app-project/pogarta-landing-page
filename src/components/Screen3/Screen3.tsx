@@ -42,7 +42,7 @@ export const Screen3 = () => {
 
 
     return (
-        <div id="about" className="w-screen h-[1600px] items-center py-20 px-64 screen3-background">
+        <div id="about" className="w-screen h-[180vh] items-center py-20 px-64 screen3-background">
 
             <div>
                 <p>
@@ -55,7 +55,7 @@ export const Screen3 = () => {
                 </p>
             </div>
             
-            <div className="mt-32 flex w-[900px] relative">
+            <div className="mt-32 flex w-[900px] relative h-[20vh]">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -91,7 +91,7 @@ export const Screen3 = () => {
             </div>
 
 
-            <div className="mt-32 flex w-[960px]">
+            <div className="mt-32 flex w-[960px] h-[30vh]">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
