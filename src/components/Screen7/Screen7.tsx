@@ -1,5 +1,6 @@
-import Image from "next/image"
+'use client'
 
+import { motion } from 'framer-motion';
 
 export const Screen7 = () => {
     const offers = [
@@ -11,6 +12,7 @@ export const Screen7 = () => {
         { title: 'Fullstack Developer', details: '6 800 - 8 070 USD Net/month  B2B' },
     ];
 
+    // Funkcja dzieląca tablicę ofert na mniejsze fragmenty
     const chunkArray = (arr: any[], chunkSize: number) => {
         let results = [];
         while (arr.length) {
@@ -21,28 +23,57 @@ export const Screen7 = () => {
 
     const chunkedOffers = chunkArray([...offers], 2);
 
+    const containerVariants = {
+        hidden: { y: 30, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.1,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: { y: 0, opacity: 1 },
+    };
+
     return (
         <div className="w-screen h-screen flex flex-col items-center justify-center bg-[#383838]">
-        <h1 className="text-6xl font-medium text-[#D9B55E] mb-20">Current job offers</h1>
-        {chunkedOffers.map((chunk, chunkIndex) => (
-            <div key={chunkIndex} className="flex justify-center space-x-8 mb-8">
-                {chunk.map((offer, index) => (
-                    <div key={index} className="bg-black bg-opacity-10 p-10 rounded-full flex items-center space-x-4 w-[calc(50%-4rem)] ">
-                        <div className="flex-1 ml-10">
-                            <h2 className="text-2xl text-[#D9B55E]">{offer.title}</h2>
-                            <p className="text-[#B7B7B7] text-lg">{offer.details}</p>
-                        </div>
-                        <div className="ml-auto"> 
-                            <button className="bg-[#747474] bg-opacity-30 hover:bg-gray-600 text-[#D9B55E] py-3 px-6 rounded-full transition duration-300 ml-5">
-                                KNOW MORE →
-                            </button>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        ))}
-    </div>
-    
-    
+            <h1 className="text-6xl font-medium text-[#D9B55E] mb-20">Current job offers</h1>
+            {chunkedOffers.map((chunk, chunkIndex) => (
+                <motion.div 
+                    className="flex justify-center space-x-8 mb-8"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    key={chunkIndex}
+                >
+                    {chunk.map((offer, index) => (
+                        <motion.div 
+                            key={index} 
+                            className="bg-black bg-opacity-10 p-10 rounded-full flex items-center space-x-4 w-[calc(50%-4rem)]"
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                        >
+                            <div className="flex-1 ml-10">
+                                <h2 className="text-2xl text-[#D9B55E]">{offer.title}</h2>
+                                <p className="text-[#B7B7B7] text-lg">{offer.details}</p>
+                            </div>
+                            <div className="ml-auto"> 
+                                <motion.button 
+                                    whileHover={{ scale: 1.1, backgroundColor: "#616161" }}
+                                    className="bg-[#747474] bg-opacity-30 hover:bg-gray-600 text-[#D9B55E] py-3 px-6 rounded-full transition duration-300 ml-5"
+                                >
+                                    Find Out More →
+                                </motion.button>
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
+            ))}
+        </div>
     );
 };
