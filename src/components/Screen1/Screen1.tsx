@@ -4,6 +4,8 @@ import Image from "next/image"
 import SPM from "/public/images/Sic_Parvis_Magna.svg"
 import AnimatedBackground from "@/components/Screen1/components/AnimatedBackground";
 import bg from "/public/images/bgwhite.svg"
+import Lottie from 'react-lottie';
+import pogartaLogo from '../../../public/gifs/pogartaLogo.json';
 
 // const AnimatedBackground = ({ delay = 0 }) => (
 //   <motion.div
@@ -15,20 +17,34 @@ import bg from "/public/images/bgwhite.svg"
 //     <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-0 opacity-10 " />
 //   </motion.div>
 // );
+const Logo = () => {
+  const defaultOptions = {
+    loop: false,
+    autoplay: true, 
+    animationData: pogartaLogo,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+    
+  };
 
+  return (
+      <Lottie options={defaultOptions} height={1000} width={1000}/>
+  );
+}
 export const Screen1 = () => {
     return (
-      <div className="w-full h-screen1 flex flex-col justify-center items-center text-[#D9B55E] ">
-        <AnimatedBackground />
+<div className="w-full h-[70vh] flex flex-col justify-center items-center text-[#D9B55E] z-10">        <AnimatedBackground />
         <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-20 mt-1 opacity-20" />
         <motion.div 
           animate={{ y: ["0%", "1%", "0%"] }}
           transition={{ yoyo:Infinity ,duration: 2, repeat: Infinity }}
           className="z-10 mb-5"
         >
-          <Image src={SPM} alt="Sic Parvis Magna" />
+          {/* <Image src={SPM} alt="Sic Parvis Magna" /> */}
+          <Logo/>
         </motion.div>
-        <p className="text-lg tracking-widest text-[#747474] z-10">
+        <p className="absolute bottom-[22vh] text-lg tracking-widest text-[#747474] z-10">
           From small beginnings come great things
         </p>
       </div>
