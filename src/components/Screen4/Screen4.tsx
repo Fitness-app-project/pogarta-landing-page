@@ -158,8 +158,8 @@ export const Screen4 = () => {
   ];
 
   return (
-    <div id="portfolio">
-      <div className=" flex flex-col items-center text-center p-4    bg-white">
+    <div id="portfolio" className="flex flex-col items-center text-center p-4 screen4-background">
+    <div className=" flex flex-col items-center text-center p-4    bg-white">
         <h1 className="text-6xl font-elegant text-deep-ocean mt-10 leading-tight text-gray-600">
           Imagine Innovate Implement 
         </h1>

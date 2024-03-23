@@ -42,7 +42,7 @@ export const Screen3 = () => {
 
 
     return (
-        <div  id="about" className="w-screen h-[1600px] items-center bg-[#383838] py-20 px-64">
+        <div id="about" className="w-screen h-[1600px] items-center py-20 px-64 screen3-background">
 
             <div>
                 <p>
@@ -132,10 +132,10 @@ international triumph." />
 
             <div className='flex items-center gap-10 mt-32'>
                 <h3 className="font-medium text-[40px] leading-[80px] text-white">Our portfolio in numbers</h3>
-                <button className="btn buttonBgTransparent border-none w-[300px] h-[60px] text-[#747474]" style={{ borderRadius: "50px" }}>
+                {/* <button className="btn buttonBgTransparent border-none w-[300px] h-[60px] text-[#747474]" style={{ borderRadius: "50px" }}>
                     Our projects
                     <FaLongArrowAltRight size={32} />
-                </button>
+                </button> */}
             </div>
 
             <div className="flex justify-evenly items-center mt-12 gap-16">

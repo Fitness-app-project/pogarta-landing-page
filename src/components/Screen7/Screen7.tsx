@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion';
+import Typewriter from "react-ts-typewriter";
 
 export const Screen7 = () => {
     const offers = [
@@ -41,8 +42,10 @@ export const Screen7 = () => {
     };
 
     return (
-        <div className="w-screen h-screen flex flex-col items-center justify-center bg-[#383838]">
-            <h1 className="text-6xl font-medium text-[#D9B55E] mb-20">Current job offers</h1>
+        <div className="w-screen h-screen flex flex-col items-center justify-center screen7-background">
+            <h1 className="text-6xl font-medium text-[#D9B55E] mb-20">    
+            <Typewriter  cursor={false} text="Current job offers" />
+</h1>
             {chunkedOffers.map((chunk, chunkIndex) => (
                 <motion.div 
                     className="flex justify-center space-x-8 mb-8"
@@ -54,7 +57,7 @@ export const Screen7 = () => {
                     {chunk.map((offer, index) => (
                         <motion.div 
                             key={index} 
-                            className="bg-black bg-opacity-10 p-10 rounded-full flex items-center space-x-4 w-[calc(50%-4rem)]"
+                            className="bg-black bg-opacity-50 p-10 rounded-full flex items-center space-x-4 w-[calc(50%-4rem)]"
                             variants={itemVariants}
                             whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                         >
