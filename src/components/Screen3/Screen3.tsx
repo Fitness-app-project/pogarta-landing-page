@@ -3,8 +3,8 @@ import { motion, useMotionTemplate, useScroll, useTransform } from 'framer-motio
 import Image from 'next/image';
 import { useRef } from 'react';
 import { FaLongArrowAltRight } from 'react-icons/fa';
-import useTypewriter from 'react-typewriter-hook/build/useTypewriter';
-import Typewriter from './components/Typewriter';
+// import Typewriter from './components/Typewriter';
+import Typewriter from "react-ts-typewriter";
 
 const content = [
     "We build new ventures and non-standard",
@@ -42,7 +42,7 @@ export const Screen3 = () => {
 
 
     return (
-        <div className="w-screen h-[1600px] items-center bg-[#383838] py-20 px-64">
+        <div  id="about" className="w-screen h-[1600px] items-center bg-[#383838] py-20 px-64">
 
             <div>
                 <p>
@@ -78,11 +78,15 @@ export const Screen3 = () => {
   className="pl-[320px] pt-[30px]"
 >
   <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
-    <Typewriter text="Building new ventures" />
+    <Typewriter cursor={false} text="Building  " />
+    <Typewriter  delay={700} loop={true} cursor={false} text={["initiatives", "startups", "innovations", "ventures", "enterprises", "incubations", "launches", "creations", "developments", "businesses"]} />
+
   </h3>
   <p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
-    <Typewriter text="We create projects from scratch. Our well-coordinated, experienced team, knowledge and a good plan are the key to the success of many projects." />
-  </p>
+    <Typewriter  cursor={false} text="We create projects from scratch." />
+    <br />
+    <Typewriter text="Our well-coordinated, experienced team, knowledge and a good plan are the key to the success of many projects." />
+</p>
 </motion.div>
             </div>
 
@@ -111,12 +115,15 @@ export const Screen3 = () => {
   className="pl-[320px] pt-[30px]"
 >
   <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
-  <Typewriter text="Scaling-up businesses" />
-  </h3>
+  <Typewriter cursor={false} text="Scaling-up " />
+  <Typewriter  delay={700}loop={true} cursor={false} text={["enterprises", "innovations", "solutions", "partnerships", "collaborations", "initiatives", "ventures", "creations", "developments", "projects"]} />
+</h3>
   <p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
-  <Typewriter text="Our expertise from launching and scaling various
+  <Typewriter cursor={false} text="Our expertise from launching and scaling various
 tech ventures enables us to assist early-stage
-startups and their founders. Collaboratively, we
+startups and their founders."/>
+<br />
+<Typewriter text="Collaboratively, we
 expedite startup growth, propelling them towards
 international triumph." />
   </p>

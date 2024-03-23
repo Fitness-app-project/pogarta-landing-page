@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image"
 import SPM from "/public/images/Sic_Parvis_Magna.svg"
 import AnimatedBackground from "@/components/Screen1/components/AnimatedBackground";
+import bg from "/public/images/bgwhite.svg"
 
 // const AnimatedBackground = ({ delay = 0 }) => (
 //   <motion.div
@@ -19,7 +20,7 @@ export const Screen1 = () => {
     return (
       <div className="w-full h-screen1 flex flex-col justify-center items-center text-[#D9B55E] ">
         <AnimatedBackground />
-
+        <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-20 mt-1 opacity-20" />
         <motion.div 
           animate={{ y: ["0%", "1%", "0%"] }}
           transition={{ yoyo:Infinity ,duration: 2, repeat: Infinity }}

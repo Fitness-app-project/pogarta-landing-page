@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
 import { motion } from "framer-motion"
 import PogartaSvg from "/public/images/Pogarta.svg"
 import Image from "next/image"
-
+import { Link } from 'react-scroll';
+import Typewriter from "react-ts-typewriter";
 
 export const Menu = () => {
-
     return (
         <div className="w-full h-full flex justify-between items-center py-6">
             <motion.div
@@ -24,11 +24,22 @@ export const Menu = () => {
                 />
             </motion.div>
             <div className="flex justify-evenly items-center gap-12 text-xl ">
-                <button className="tracking-widest  ">Home</button>
-                <button className="tracking-widest ">Portfolio</button>
-                <button className="tracking-widest  ">About us</button>
-                <button className="tracking-widest ">Contact</button>
-            </div>
+    <Link to="home" smooth={true} duration={500} className="tracking-widest z-50">
+        <Typewriter text="Home" speed={200}cursor={false} />
+    </Link>
+    <Link to="portfolio" smooth={true} duration={500} className="tracking-widest z-50">
+        <Typewriter text="Portfolio" speed={200}cursor={false} />
+    </Link>
+    <Link to="about" smooth={true} duration={500} className="tracking-widest z-50">
+        <Typewriter text="About us" speed={200}cursor={false} />
+    </Link>
+    <Link to="services" smooth={true} duration={500} className="tracking-widest z-50">
+        <Typewriter text="Services" speed={200} cursor={false}/>
+    </Link>
+    <Link to="contact" smooth={true} duration={500} className="tracking-widest z-50">
+        <Typewriter text="Contact" speed={200} cursor={false} />
+    </Link>
+</div>
         </div>
     )
 }
