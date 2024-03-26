@@ -42,7 +42,7 @@ export const Screen7 = () => {
     };
 
     return (
-        <div className="w-screen h-screen flex flex-col items-center justify-center screen7-background">
+        <div className="w-screen h-[100vh] flex flex-col items-center justify-center screen7-background"  style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
             <h1 className="text-6xl font-medium text-[#D9B55E] mb-20">    
             <Typewriter  cursor={false} text="Current job offers" />
 </h1>

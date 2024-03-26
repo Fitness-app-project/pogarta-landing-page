@@ -25,7 +25,7 @@ const ContentLine = ({ content }: { content: string }) => {
     const clipPathVal = useMotionTemplate`inset(0% ${scrollValue} 0% 0%)`
   
     return (
-      <span className="relative overflow-hidden block" ref={contentRef}>
+      <span className="relative block" ref={contentRef}>
         <motion.span
             style={{ clipPath: clipPathVal }}
             className="highlighted-text absolute left-0 z-0 text-6xl font-normal leading-[78px] tracking-wide text-white"
@@ -42,7 +42,9 @@ export const Screen3 = () => {
 
 
     return (
-        <div id="about" className="w-screen h-[180vh] items-center py-20 px-64 screen3-background">
+        <div className="sticky top-0 z-50">
+
+        <div id="about" className="w-screen h-[180vh] items-center py-20 px-64 screen3-background" style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
 
             <div>
                 <p>
@@ -186,6 +188,7 @@ international triumph." />
                     </p>
                 </div>
 
+            </div>
             </div>
 
         </div>

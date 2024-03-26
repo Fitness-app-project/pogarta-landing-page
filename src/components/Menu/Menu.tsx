@@ -8,7 +8,7 @@ import Typewriter from "react-ts-typewriter";
 
 export const Menu = () => {
     return (
-<div className="w-full h-[10vh] flex justify-between items-center py-6">            <motion.div
+<div className="w-full h-[10vh] flex justify-between items-center py-6 pr-10">            <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.5 }}

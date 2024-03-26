@@ -20,14 +20,14 @@
    ale przejście do jasnego koloru (#808080) następuje szybciej */
 
    .screen3-background {
-    background: linear-gradient(to bottom, #383838 0%, #808080 70%, #ffffff 100%);
+    background: #383838;
   }
   
   .screen4-background {
     background: #fff;
   }
   .screen7-background {
-    background: linear-gradient(to top, #383838 0%, #808080 50%, #fff 100%);
+    background: #383838;
   }
   
 
