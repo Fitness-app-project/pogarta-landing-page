@@ -81,7 +81,7 @@ export const Screen3 = () => {
 >
   <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
     <Typewriter cursor={false} text="Building  " />
-    <Typewriter  delay={700} loop={true} cursor={false} text={["initiatives", "startups", "innovations", "ventures", "enterprises", "incubations", "launches", "creations", "developments", "businesses"]} />
+    <Typewriter  speed={200} delay={500} loop={true} cursor={false} text={["initiatives", "startups", "innovations", "ventures", "enterprises", "incubations", "launches", "creations", "developments", "businesses"]} />
 
   </h3>
   <p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
@@ -118,7 +118,7 @@ export const Screen3 = () => {
 >
   <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
   <Typewriter cursor={false} text="Scaling-up " />
-  <Typewriter  delay={700}loop={true} cursor={false} text={["enterprises", "innovations", "solutions", "partnerships", "collaborations", "initiatives", "ventures", "creations", "developments", "projects"]} />
+  <Typewriter  speed={200} delay={500} loop={true} cursor={false} text={["enterprises", "innovations", "solutions", "partnerships", "collaborations", "initiatives", "ventures", "creations", "developments", "projects"]} />
 </h3>
   <p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
   <Typewriter cursor={false} text="Our expertise from launching and scaling various
