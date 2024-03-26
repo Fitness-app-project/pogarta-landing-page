@@ -6,26 +6,25 @@ import Image from 'next/image';
 const imagePath = "/images/Screen4images/";
 
 const CompanyCell = ({ logo, text, altText }: { logo: string, text: string, altText: string }) => {
-    return (
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          // whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
-          whileHover={{ scale: 1.2, transition: { duration: 0.3 }, zIndex: 2 }}
+  return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        whileHover={{ scale: 1.2, transition: { duration: 0.3 }, zIndex: 2 }}
+        className="flex flex-col items-center text-center p-4 mt-10"
+        
+      >
+          <motion.div className="relative flex justify-center items-center w-32 h-32" animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
+              <Image src={logo} alt={altText} layout="fill" objectFit="contain" />
+          </motion.div>
 
-          className="flex flex-col items-center text-center p-4 mt-10"
-        >
-            <motion.div className="relative flex justify-center items-center w-32 h-32" animate={{ scale: 1 }} transition={{ duration: 0.5 }}>
-    <Image src={logo} alt={altText} layout="fill" objectFit="contain" />
-</motion.div>
-
-            <div className="mt-2 flex flex-col items-center text-center p-4">
-                <p className=" text-[#383838] text-xs ">{text}</p>
-            </div>
-        </motion.div>
-    );
+          <div className="mt-2 flex flex-col items-center text-center p-4">
+              <p className="text-[#383838] text-xs">{text}</p>
+          </div>
+      </motion.div>
+  );
 };
 
 export const Screen4 = () => {
@@ -158,20 +157,20 @@ export const Screen4 = () => {
   ];
 
   return (
-    <div id="portfolio" className="flex flex-col items-center text-center p-4 screen4-background">
-    <div className=" flex flex-col items-center text-center p-4    bg-white">
-        <h1 className="text-6xl font-elegant text-deep-ocean mt-10 leading-tight text-gray-600">
-          Imagine Innovate Implement 
-        </h1>
-        <p className="text-lg mt-10  text-gray-600 italic">
-          Trusted by industry leaders, see who we’ve helped thrive. <br /> What have we done?
-        </p>
-      </div>
-      <div className="grid grid-cols-5 gap-4 bg-white w-screen px-64 mb">
-          {companies.map((company, index) => (
-            <CompanyCell key={index} logo={company.logo} text={company.text} altText={company.altText} />
-          ))}
-      </div>
+    <div id="portfolio" className=" flex flex-col items-center text-center p-4 screen4-background w-screen h-[220vh]"  style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
+      <div className="flex flex-col items-center text-center p-4 bg-white " >
+          <h1 className="text-6xl font-elegant text-deep-ocean mt-10 leading-tight text-gray-600">
+            Imagine Innovate Implement 
+          </h1>
+          <p className="text-lg mt-10 text-gray-600 italic">
+            Trusted by industry leaders, see who we’ve helped thrive. <br /> What have we done?
+          </p>
+        </div>
+        <div className="grid grid-cols-5 gap-4 bg-white w-screen px-64 mb">
+            {companies.map((company, index) => (
+              <CompanyCell key={index} logo={company.logo} text={company.text} altText={company.altText} />
+            ))}
+        </div>
     </div>
   );
 };
