@@ -21,7 +21,7 @@ const ScreensManager = () => {
     const windowHeight = window.innerHeight;
     const triggerHeightForScreen3 = windowHeight * 2;
     const triggerHeightForScreen4 = windowHeight * 4.2;
-    const triggerHeightForScreen7 = windowHeight * 6.2;
+    const triggerHeightForScreen7 = windowHeight * 5.2;
 
     const screen1Pos = screen1Ref.current?.getBoundingClientRect();
     const screen3Pos = screen3Ref.current?.getBoundingClientRect();
@@ -78,7 +78,7 @@ const ScreensManager = () => {
       <div style={{position: 'sticky', top:-1000 , zIndex: 1, opacity: screen4Opacity }} ref={screen4Ref}>
         <Screen4/>
       </div>
-      <div style={{position: 'sticky', top:-100 , zIndex: 1, opacity: screen7Opacity }} ref={screen7Ref}>
+      <div style={{position: 'sticky', top:-100, zIndex: 1, opacity: screen7Opacity }} ref={screen7Ref}>
         <Screen7/>
       </div>
       <div style={{ zIndex: 1, position: 'sticky'}}>
