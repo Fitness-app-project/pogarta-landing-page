@@ -104,56 +104,56 @@ export const Screen4 = () => {
         text: 'Product development feedback loop to enhance equipment innovation.',
         altText: 'Tecnifibre',
       },
-      {
-        logo: `${imagePath}HBO.svg`,
-        text: 'Content performance analytics to guide production and marketing.',
-        altText: 'HBO',
-      },
-      {
-          logo: `${imagePath}CDProject.svg`,
-          text: 'Game development workflow tool to streamline creation processes.',
-          altText: 'CDProject',
-        },
-        {
-          logo: `${imagePath}Starbucks.svg`,
-          text: 'Sustainability tracking system for eco-friendly business practices.',
-          altText: 'Starbucks',
-        },
-        {
-          logo: `${imagePath}Y-Combinator.svg`,
-          text: 'Internal networking platform to foster startup collaboration.',
-          altText: 'Y-Combinator',
-        },
-        {
-          logo: `${imagePath}Pearson.svg`,
-          text: 'E-learning content management system to streamline course creation.',
-          altText: 'Pearson',
-        },
-         {
-          logo: `${imagePath}Duolingo.svg`,
-          text: 'Language proficiency tracking system to enhance user learning experience.',
-          altText: 'Duolingo',
-        },
-        {
-          logo: `${imagePath}Rolex.svg`,
-          text: 'Luxury brand authenticity verification platform to ensure product integrity.',
-          altText: 'Rolex',
-        },
-        {
-          logo: `${imagePath}DJI.svg`,
-          text: 'Flight data analysis tool for optimizing drone performance and safety.',
-          altText: 'DJI',
-        },
-        {
-          logo: `${imagePath}Bitget.svg`,
-          text: 'Cryptocurrency market trend analysis tool for optimized trading strategies.',
-          altText: 'Bitget',
-        },
-        {
-          logo: `${imagePath}StanfordMedicine.svg`,
-          text: 'Patient data analytics platform to improve treatment outcomes and research.',
-          altText: 'Stanford Medicine',
-        },        
+      // {
+      //   logo: `${imagePath}HBO.svg`,
+      //   text: 'Content performance analytics to guide production and marketing.',
+      //   altText: 'HBO',
+      // },
+      // {
+      //     logo: `${imagePath}CDProject.svg`,
+      //     text: 'Game development workflow tool to streamline creation processes.',
+      //     altText: 'CDProject',
+      //   },
+        // {
+        //   logo: `${imagePath}Starbucks.svg`,
+        //   text: 'Sustainability tracking system for eco-friendly business practices.',
+        //   altText: 'Starbucks',
+        // },
+        // {
+        //   logo: `${imagePath}Y-Combinator.svg`,
+        //   text: 'Internal networking platform to foster startup collaboration.',
+        //   altText: 'Y-Combinator',
+        // },
+        // {
+        //   logo: `${imagePath}Pearson.svg`,
+        //   text: 'E-learning content management system to streamline course creation.',
+        //   altText: 'Pearson',
+        // },
+        //  {
+        //   logo: `${imagePath}Duolingo.svg`,
+        //   text: 'Language proficiency tracking system to enhance user learning experience.',
+        //   altText: 'Duolingo',
+        // },
+        // {
+        //   logo: `${imagePath}Rolex.svg`,
+        //   text: 'Luxury brand authenticity verification platform to ensure product integrity.',
+        //   altText: 'Rolex',
+        // },
+        // {
+        //   logo: `${imagePath}DJI.svg`,
+        //   text: 'Flight data analysis tool for optimizing drone performance and safety.',
+        //   altText: 'DJI',
+        // },
+        // {
+        //   logo: `${imagePath}Bitget.svg`,
+        //   text: 'Cryptocurrency market trend analysis tool for optimized trading strategies.',
+        //   altText: 'Bitget',
+        // },
+        // {
+        //   logo: `${imagePath}StanfordMedicine.svg`,
+        //   text: 'Patient data analytics platform to improve treatment outcomes and research.',
+        //   altText: 'Stanford Medicine',
+        // },        
   ];
 
   return (
@@ -166,7 +166,7 @@ export const Screen4 = () => {
             Trusted by industry leaders, see who we’ve helped thrive. <br /> What have we done?
           </p>
         </div>
-        <div className="grid grid-cols-5 gap-4 bg-white w-screen px-64 mb">
+        <div className="grid grid-cols-3 gap-4 bg-white w-screen px-64 mb">
             {companies.map((company, index) => (
               <CompanyCell key={index} logo={company.logo} text={company.text} altText={company.altText} />
             ))}

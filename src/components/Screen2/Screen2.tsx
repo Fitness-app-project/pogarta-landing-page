@@ -6,10 +6,10 @@ export const Screen2 = () => {
     return (
         <div className="w-screen h-[20vh] flex flex-col items-center z-1" style={{ borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px' }}>           
             <div className="w-screen flex justify-evenly text-white bg-[#000000] bg-opacity-10 h-[230px] z-1 ">
-                {[{ end: 12, color: '#886A38', text: 'Years of Experience' }, 
-                  { end: 600, color: '#8D6F3B', text: 'Completed Projects' },
-                  { end: 120, color: '#766749', text: 'Clients Worldwide' },
-                  { end: 40, color: '#C0A56F', text: 'Specialists' }].map((item, index) => (
+                {[{ end: 7, color: '#886A38', text: 'Years of Experience' }, 
+                  { end: 40, color: '#8D6F3B', text: 'Completed Projects' },
+                  { end: 25, color: '#766749', text: 'Clients Worldwide' },
+                  { end: 30, color: '#C0A56F', text: 'Specialists' }].map((item, index) => (
                     <motion.div
                         initial={{ scale: 1 }}
                         animate={{ scale: 1 }}

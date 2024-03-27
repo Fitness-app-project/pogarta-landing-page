@@ -15,7 +15,7 @@ import ScreensManager from "./ScreensManager";
 export default function Home() {
   return (
     <>
-    <CustomCursor />
+    {/* <CustomCursor /> */}
     <main className="flex min-h-screen flex-col items-center px-60 text-[#FDFDFD]">
       {/* <Menu /> */}
       {/* {screens.map((screen, index) => (
