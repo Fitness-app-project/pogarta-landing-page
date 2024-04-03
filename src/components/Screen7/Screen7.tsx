@@ -42,8 +42,8 @@ export const Screen7 = () => {
     };
 
     return (
-        <div className="w-screen h-[110vh] flex flex-col items-center justify-center screen7-background"  style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
-            <h1 className="text-6xl font-medium text-[#D9B55E] mb-20">    
+        <div className="w-screen h-[110vh] flex flex-col items-center justify-center screen7-background m-28"  style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
+            <h1 className="text-6xl font-medium text-[#D9B55E] mb-28">    
             <Typewriter  cursor={false} text="Current job offers" />
 </h1>
             {chunkedOffers.map((chunk, chunkIndex) => (
