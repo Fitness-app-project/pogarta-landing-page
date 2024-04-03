@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 
 export const Screen2 = () => {
     return (
-        <div className="w-screen h-[20vh] flex flex-col items-center z-1" style={{ borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px' }}>           
+        <div className="w-screen h-[20vh] flex flex-col items-center z-10" style={{ borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px'}}>           
             <div className="w-screen flex justify-evenly text-white bg-[#000000] bg-opacity-10 h-[230px] z-1 ">
                 {[{ end: 7, color: '#886A38', text: 'Years of Experience' }, 
                   { end: 40, color: '#8D6F3B', text: 'Completed Projects' },

@@ -9,6 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.103.0",
+    "@react-three/fiber": "^8.16.1",
+    "d3-scale": "^4.0.2",
+    "d3-selection": "^3.0.0",
+    "d3-shape": "^3.2.0",
+    "d3-transition": "^3.0.1",
     "framer-motion": "^11.0.14",
     "next": "14.1.1",
     "react": "^18",
@@ -22,6 +28,10 @@
     "react-typewriter-hook": "^1.0.2"
   },
   "devDependencies": {
+    "@types/d3-scale": "^4.0.8",
+    "@types/d3-selection": "^3.0.10",
+    "@types/d3-shape": "^3.1.6",
+    "@types/d3-transition": "^3.0.8",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

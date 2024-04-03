@@ -2,11 +2,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image"
 import SPM from "/public/images/Sic_Parvis_Magna.svg"
-import AnimatedBackground from "@/components/Screen1/components/AnimatedBackground";
+// import AnimatedBackground from "@/components/Screen1/components/AnimatedBackground";
 import bg from "/public/images/bgwhite.svg"
 import Lottie from 'react-lottie';
-import pogartaLogo from '../../../public/gifs/pogartaLogo.json';
-
+import pogartaLogo from '../../../public/gifs/pogartaLogoSlide2.json';
+import { BackgroundAnimation } from "../Screen7/Background";
+import AnimatedLogoBackground from "./components/Background";
 // const AnimatedBackground = ({ delay = 0 }) => (
 //   <motion.div
 //     initial={{ x: '-110vw' }}
@@ -29,17 +30,28 @@ const Logo = () => {
   };
 
   return (
-      <Lottie options={defaultOptions} height={1000} width={1000}/>
+      <Lottie options={defaultOptions} height={850} width={1600}/>
   );
 }
 export const Screen1 = () => {
+
     return (
-<div className="w-full h-[70vh] flex flex-col justify-center items-center text-[#D9B55E] z-10">        <AnimatedBackground />
-        <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-20 mt-1 opacity-20" />
+      
+<div className="w-full h-[70vh] flex flex-col justify-center items-center text-[#D9B55E] z-10">
+{/* <AnimatedBackground /> */}
+{/* <div className='w-screen h-[110vh] absolute'>
+                <BackgroundAnimation />
+            </div>        */}
+            <div className='w-screen h-[110vh] absolute opacity-[0.5] z-999'>
+            {/* <AnimatedLogoBackground width={2500} height={862}/> */}
+            <BackgroundAnimation/>
+            </div>
+            
+             <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-20 mt-1 opacity-20" />
         <motion.div 
           animate={{ y: ["0%", "1%", "0%"] }}
           transition={{ yoyo:Infinity ,duration: 2, repeat: Infinity }}
-          className="z-10 mb-5"
+          className="z-0 mb-5"
         >
           {/* <Image src={SPM} alt="Sic Parvis Magna" /> */}
           <Logo/>

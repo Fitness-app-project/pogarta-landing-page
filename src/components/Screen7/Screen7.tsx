@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Typewriter from "react-ts-typewriter";
-
+import {BackgroundAnimation} from './Background';
 export const Screen7 = () => {
     const offers = [
         { title: 'Project Manager', details: '3 040 - 4 300 USD Net/month  B2B' },
@@ -42,33 +42,41 @@ export const Screen7 = () => {
     };
 
     return (
-        <div className="w-screen h-[110vh] flex flex-col items-center justify-center screen7-background m-28"  style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
-            <h1 className="text-6xl font-medium text-[#D9B55E] mb-28">    
-            <Typewriter  cursor={false} text="Current job offers" />
-</h1>
+
+        <div className="w-screen h-[110vh] flex flex-col items-center justify-center screen7-background relative" style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh', zIndex: 10 }}>
+            <div className='w-screen h-[110vh] absolute'>
+                <BackgroundAnimation />
+            </div>
+            <h1 className="text-6xl font-medium text-[#D9B55E] mb-20 z-30 relative">
+                <Typewriter cursor={false} text="Current job offers" />
+            </h1>
             {chunkedOffers.map((chunk, chunkIndex) => (
-                <motion.div 
-                    className="flex justify-center space-x-8 mb-8"
+                <motion.div
+                    className="flex justify-center space-x-8 mb-8 z-30"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
                     key={chunkIndex}
                 >
                     {chunk.map((offer, index) => (
-                        <motion.div 
-                            key={index} 
-                            className="bg-black bg-opacity-50 p-10 rounded-full flex items-center space-x-4 w-[calc(50%-4rem)]"
+                        <motion.div
+                            key={index}
+                            className="bg-black bg-opacity-50 p-10 rounded-full flex items-center space-x-4 w-[calc(50%-4rem)] z-30"
                             variants={itemVariants}
                             whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                            onClick={() => {
+                            }}
                         >
                             <div className="flex-1 ml-10">
                                 <h2 className="text-2xl text-[#D9B55E]">{offer.title}</h2>
                                 <p className="text-[#B7B7B7] text-lg">{offer.details}</p>
                             </div>
-                            <div className="ml-auto"> 
-                                <motion.button 
+                            <div className="ml-auto">
+                                <motion.button
                                     whileHover={{ scale: 1.1, backgroundColor: "#616161" }}
                                     className="bg-[#747474] bg-opacity-30 hover:bg-gray-600 text-[#D9B55E] py-3 px-6 rounded-full transition duration-300 ml-5"
+                                    onClick={() => {
+                                    }}
                                 >
                                     Find Out More →
                                 </motion.button>

@@ -8,6 +8,7 @@ import { Screen4 } from '@/components/Screen4/Screen4';
 import { Screen7 } from '@/components/Screen7/Screen7';
 import { Footer } from '@/components/Footer/Footer';
 import { FooterBar } from '@/components/FooterBar/FooterBar';
+import { ScreenTest } from '@/components/screen';
 const ScreensManager = () => {
   const screen1Ref = useRef<HTMLDivElement>(null);
   const screen3Ref = useRef<HTMLDivElement>(null);
@@ -67,9 +68,10 @@ const ScreensManager = () => {
   return (
     <>
       <div style={{ zIndex: 1, position: 'sticky', top: 0, opacity: screen1Opacity }} ref={screen1Ref}>
-        <Menu/>
-        <Screen1 />
-        <Screen2 />
+      {/* <ScreenTest/> */}
+      <Menu/>
+      <Screen1/>
+      <Screen2/>
       </div>
 
         <div style={{ position: 'sticky', top:-700 , zIndex: 1, opacity: screen3Opacity }} ref={screen3Ref}>
