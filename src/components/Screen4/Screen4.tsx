@@ -35,6 +35,11 @@ export const Screen4 = () => {
       altText: 'grasstec-group-logo',
     },
     {
+      logo: `${imagePath}SAP-Climate.png`,
+      text: 'SAP climate',
+      altText: 'SAP climate',
+    },
+    {
       logo: `${imagePath}solbeg-logo.svg`,
       text: 'Solbeg',
       altText: 'solbeg-logo',
@@ -43,6 +48,11 @@ export const Screen4 = () => {
       logo: `${imagePath}logo-TTSW.svg`,
       text: 'Transition Technologies-Software',
       altText: 'logo-TTSW',
+    },
+    {
+      logo: `${imagePath}adk-construction-group.jpg`,
+      text: 'ADK Construction Group',
+      altText: 'ADK Construction Group',
     },
     {
       logo: `${imagePath}2000x2000-square-white.png`,
@@ -64,6 +74,12 @@ export const Screen4 = () => {
         text: 'Internet Media Polska',
         altText: 'INTERNET MEDIA POLSKA',
       },
+      {
+        logo: `${imagePath}bema_napis.svg`,
+        text: 'Leśny Park Bema',
+        altText: 'Leśny Park Bema',
+      },
+      
       {
         logo: `${imagePath}webtom.png`,
         text: 'Webtom',
@@ -89,6 +105,11 @@ export const Screen4 = () => {
         text: 'Inkubator Technologiczny w Iławie',
         altText: 'Inkubator Technologiczny w Iławie',
       },
+      {
+        logo: `${imagePath}Pracownia Otwarta Dzika Śliwka.png`,
+        text: 'Pracownia Otwarta Dzika Śliwka',
+        altText: 'Pracownia Otwarta Dzika Śliwka',
+      },
       // {
       //   logo: `${imagePath}inkubator_ilawa.png`,
       //   text: 'Inkubator Technologiczny w Iławie',
@@ -98,7 +119,7 @@ export const Screen4 = () => {
   ];
 
   return (
-    <div id="portfolio" className=" flex flex-col items-center text-center p-4 screen4-background w-screen h-[180vh]"  style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
+    <div id="portfolio" className=" flex flex-col items-center text-center p-4 screen4-background w-screen h-[220vh]"  style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
       <div className="flex flex-col items-center text-center p-4 bg-white " >
           <h1 className="text-6xl font-elegant text-deep-ocean mt-20 leading-tight text-gray-600">
             Imagine Innovate Implement 
@@ -107,7 +128,7 @@ export const Screen4 = () => {
             Trusted by industry leaders, see who we have helped thrive. <br /> Whose potential have we unlocked?
           </p>
         </div>
-        <div className="grid grid-cols-3 gap- bg-white w-screen px-64 mb">
+        <div className="grid grid-cols-4 gap- bg-white w-screen px-64 mb">
             {companies.map((company, index) => (
               <CompanyCell key={index} logo={company.logo} text={company.text} altText={company.altText} />
             ))}
