@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat as MontserratFont } from "next/font/google";
 import "./globals.css";
+import Head from 'next/head';
 
 const Montserrat = MontserratFont({ subsets: ["latin"] });
 
@@ -15,8 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html data-theme="light" lang="en" >
+    <html data-theme="light" lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className={Montserrat.className}>{children}</body>
     </html>
   );
 }
+
