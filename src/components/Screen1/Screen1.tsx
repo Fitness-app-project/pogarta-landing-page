@@ -30,7 +30,9 @@ const Logo = () => {
   };
 
   return (
+    <div id="home">
       <Lottie options={defaultOptions} height={850} width={1600}/>
+      </div>
   );
 }
 export const Screen1 = () => {
@@ -47,7 +49,7 @@ export const Screen1 = () => {
             <BackgroundAnimation/>
             </div>
             
-             <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-20 mt-1 opacity-20" />
+             {/* <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-20 mt-1 opacity-20" /> */}
         <motion.div 
           animate={{ y: ["0%", "1%", "0%"] }}
           transition={{ yoyo:Infinity ,duration: 2, repeat: Infinity }}

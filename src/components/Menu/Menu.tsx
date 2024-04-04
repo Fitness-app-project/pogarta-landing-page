@@ -32,8 +32,8 @@ export const Menu = () => {
     <Link to="about" smooth={true} duration={500} className="tracking-widest z-50">
         <Typewriter text="About us" speed={200}cursor={false} />
     </Link>
-    <Link to="services" smooth={true} duration={500} className="tracking-widest z-50">
-        <Typewriter text="Services" speed={200} cursor={false}/>
+    <Link to="carrier" smooth={true} duration={500} className="tracking-widest z-50">
+        <Typewriter text="Carrier" speed={200} cursor={false}/>
     </Link>
     <Link to="contact" smooth={true} duration={500} className="tracking-widest z-50">
         <Typewriter text="Contact" speed={200} cursor={false} />
