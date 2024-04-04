@@ -22,7 +22,12 @@ export default function RootLayout({
         <title>{String(metadata.title)}</title>
         <meta name="description" content={metadata.description || ""} /> 
       </Head>
+    <html data-theme="light" lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className={Montserrat.className}>{children}</body>
     </html>
   );
 }
+
