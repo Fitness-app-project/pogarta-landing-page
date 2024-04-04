@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat as MontserratFont } from "next/font/google";
 import "./globals.css";
-import Head from "next/head";
+import Head from 'next/head';
 
 const Montserrat = MontserratFont({ subsets: ["latin"] });
 
@@ -15,19 +15,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const description = metadata.description || ""; 
   return (
-    <html data-theme="light" lang="en" >
-      <Head>
-        <link rel="icon" type="image/png" sizes="32x32" href="/pogartaLogoSquareSmall.png" />
-        <title>{String(metadata.title)}</title>
-        <meta name="description" content={metadata.description || ""} /> 
-      </Head>
     <html data-theme="light" lang="en">
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{String(metadata.title)}</title>
+        <meta name="description" content={description} /> 
+        <link rel="icon" href="/pogartaLogoSquareSmall.png" type="image/png" sizes="32x32" />
       </Head>
       <body className={Montserrat.className}>{children}</body>
     </html>
   );
 }
-
