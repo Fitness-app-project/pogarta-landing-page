@@ -9,6 +9,8 @@ import { Screen7 } from '@/components/Screen7/Screen7';
 import { Footer } from '@/components/Footer/Footer';
 import { FooterBar } from '@/components/FooterBar/FooterBar';
 // import { ScreenTest } from '@/components/screen';
+
+
 const ScreensManager = () => {
   const screen1Ref = useRef<HTMLDivElement>(null);
   const screen3Ref = useRef<HTMLDivElement>(null);
