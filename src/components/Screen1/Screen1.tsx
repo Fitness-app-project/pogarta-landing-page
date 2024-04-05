@@ -2,13 +2,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image"
 import SPM from "/public/images/Sic_Parvis_Magna.svg"
-// import AnimatedBackground from "@/components/Screen1/components/AnimatedBackground";
+import AnimatedBackground from "@/components/Screen1/components/AnimatedBackground";
 import bg from "/public/images/bgwhite.svg"
 import Lottie from 'react-lottie';
 import pogartaLogo from '../../../public/gifs/pogartaIkona.json';
 import pogartaLogo2 from '../../../public/gifs/pogartaText.json';
 import { BackgroundAnimation } from "../Screen7/Background";
 import AnimatedLogoBackground from "./components/Background";
+import pogartaLogo3 from "../../../public/pogartaLogoSquare.png";
+import { useState, useEffect } from "react";
 // const AnimatedBackground = ({ delay = 0 }) => (
 //   <motion.div
 //     initial={{ x: '-110vw' }}
@@ -29,14 +31,29 @@ const Logo = () => {
     }
     
   };
+  
   const height = '90vh'
   const width = `240vh`;
   return (
-    <div className="absolute">
+    <div className="absolute ">
       <Lottie options={defaultOptions} height={height} width={width}/></div>
   );
 }
 const Logo2 = () => {
+  const [showLogo, setShowLogo] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLogo(true);
+    },1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!showLogo) {
+    return null; 
+  }
+
   const defaultOptions = {
     loop: false,
     autoplay: true, 
@@ -44,18 +61,57 @@ const Logo2 = () => {
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
     }
-    
   };
-  const height = '88vh'
+
+  const height = '88vh';
   const width = `calc(${height} * 1.8824)`;
+
   return (
     <div id="home">
       <Lottie options={defaultOptions} height={height} width={width}/>
-      </div>
+    </div>
   );
 }
 export const Screen1 = () => {
+  const logoVariants = {
+    hidden: {
+      scale: 0,
+      opacity: 0,
+      x: '0vw',
+      y: '0vh',
+    },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      x: '0vw',
+      y: '0vh',
+      transition: {
+        duration: 0.3,
+        ease: 'easeInOut',
+        delay: 1 
+      },
+    },
+    move: {
+      x: '-46vw',
+      y: '-40vh',
+      scale: [1,0.12],
+      transition: {
+        duration: 0.8,
+        ease: 'easeInOut',
+        
+      },
+    }
+  };
 
+  const [animation, setAnimation] = useState('hidden');
+
+  useEffect(() => {
+    setAnimation('visible');
+    const timer = setTimeout(() => {
+      setAnimation('move');
+    }, 2000); 
+    return () => clearTimeout(timer);
+  }, []);
     return (
       
 <div className="w-screen h-[70vh] flex flex-col justify-center items-center text-[#D9B55E] z-10">
@@ -70,8 +126,17 @@ export const Screen1 = () => {
             
              <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-20 mt-1 opacity-20" />
              {/* <div className="absolute w-[200vh] bg-[#fff] "> */}
-             <Logo/>
-             {/* </div> */}
+             {/* <Logo/> */}
+             <motion.div
+      className='flex justify-center items-center absolute'
+      variants={logoVariants}
+      initial={animation}
+      animate={animation}
+    >
+      <Image src={pogartaLogo3} alt='Logo' width={500} height={500} />
+    </motion.div>
+             
+                       {/* </div> */}
         <motion.div 
           animate={{ y: ["0%", "1%", "0%"] }}
           transition={{ yoyo:Infinity ,duration: 2, repeat: Infinity }}
