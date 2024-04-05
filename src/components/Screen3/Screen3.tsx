@@ -1,10 +1,10 @@
 "use client"
-import { motion, useMotionTemplate, useScroll, useTransform } from 'framer-motion';
+import { delay, motion, useMotionTemplate, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 // import Typewriter from './components/Typewriter';
-import Typewriter from "react-ts-typewriter";
+import { TypeAnimation } from 'react-type-animation';
 
 const content = [
     "We build new ventures and non-standard",
@@ -80,14 +80,56 @@ export const Screen3 = () => {
   className="pl-[320px] pt-[30px]"
 >
   <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
-    <Typewriter cursor={false} text="Building  " />
-    <Typewriter  speed={200} delay={500} loop={true} cursor={false} text={["initiatives", "startups", "innovations", "ventures", "enterprises", "incubations", "launches", "creations", "developments", "businesses"]} />
-
+  Building{" "}
+    <TypeAnimation
+    sequence={[
+        "initiatives",
+        750,
+        "startups",
+        750,
+        "innovations",
+        750,
+        "ventures",
+        750,
+        "enterprises",
+        750,
+        "incubations",
+        750,
+        "launches",
+        750,
+        "creations",
+        750,
+        "developments",
+        750,
+        "businesses",
+        750,
+    ]} 
+      wrapper="span"
+      speed={20}
+      deletionSpeed={90}
+      repeat={Infinity}
+      cursor={false}
+      
+    />
   </h3>
   <p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
-    <Typewriter  cursor={false} text="We create projects from scratch." />
-    <br />
-    <Typewriter text="Our well-coordinated, experienced team, knowledge and a good plan are the key to the success of many projects." />
+  <TypeAnimation
+    sequence={[
+      "Crafting Visions into reality.",
+    ]}
+    wrapper="span"
+    speed={50}
+    cursor={false}
+  />
+  <br />
+  <TypeAnimation
+    sequence={[
+      "Our expert team transforms bold ideas into tangible successes, across a spectrum of ventures and innovations.",
+    ]}
+    wrapper="span"
+    speed={50}
+    cursor={false}
+  />
 </p>
 </motion.div>
             </div>
@@ -116,19 +158,59 @@ export const Screen3 = () => {
   viewport={{ once: true }}
   className="pl-[320px] pt-[30px]"
 >
-  <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
-  <Typewriter cursor={false} text="Scaling-up " />
-  <Typewriter  speed={200} delay={500} loop={true} cursor={false} text={["enterprises", "innovations", "solutions", "partnerships", "collaborations", "initiatives", "ventures", "creations", "developments", "projects"]} />
+<h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
+  Scaling-up{" "}
+  <TypeAnimation
+    sequence={[
+      "enterprises",
+      750,
+      "innovations",
+      750,
+      "solutions",
+      750,
+      "partnerships",
+      750,
+      "collaborations",
+      750,
+      "initiatives",
+      750,
+      "ventures",
+      750,
+      "creations",
+      750,
+      "developments",
+      750,
+      "projects",
+      750,
+    ]}
+    wrapper="span"
+    speed={20}
+    deletionSpeed={90}
+    repeat={Infinity}
+    cursor={false}
+  />
 </h3>
-  <p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
-  <Typewriter cursor={false} text="Our expertise from launching and scaling various
-tech ventures enables us to assist early-stage
-startups and their founders."/>
-<br />
-<Typewriter text="Collaboratively, we
-expedite startup growth, propelling them towards
-international triumph." />
-  </p>
+<p className="font-normal text-[22px] leading-[35px] text-[#B7B7B7]">
+  <TypeAnimation
+    sequence={[
+      "Our expertise from launching and scaling various tech ventures enables us to assist early-stage startups and their founders.",
+    ]}
+    wrapper="span"
+    speed={50}
+    cursor={false}
+  />
+  <br />
+  <TypeAnimation
+    sequence={[
+        7000,
+      "Collaboratively, we expedite startup growth, propelling them towards international triumph.",
+    ]}
+    wrapper="span"
+    speed={50}
+    cursor={false}
+  />
+</p>
+
 </motion.div>
             </div>
 

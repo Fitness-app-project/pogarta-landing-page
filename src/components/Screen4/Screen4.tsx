@@ -74,11 +74,11 @@ export const Screen4 = () => {
         text: 'Internet Media Polska',
         altText: 'INTERNET MEDIA POLSKA',
       },
-      {
-        logo: `${imagePath}bema_napis.svg`,
-        text: 'Leśny Park Bema',
-        altText: 'Leśny Park Bema',
-      },
+      // {
+      //   logo: `${imagePath}bema_napis.svg`,
+      //   text: 'Leśny Park Bema',
+      //   altText: 'Leśny Park Bema',
+      // },
       
       {
         logo: `${imagePath}webtom.png`,
@@ -110,11 +110,17 @@ export const Screen4 = () => {
         text: 'Pracownia Otwarta Dzika Śliwka',
         altText: 'Pracownia Otwarta Dzika Śliwka',
       },
-      // {
+      {
+        logo: `${imagePath}Gyms buddy.svg`,
+        text: 'Gyms buddy',
+        altText: 'Gyms buddy',
+      },
+      //  {
       //   logo: `${imagePath}inkubator_ilawa.png`,
       //   text: 'Inkubator Technologiczny w Iławie',
       //   altText: 'Inkubator Technologiczny w Iławie',
       // },
+      
       
   ];
 

@@ -1,25 +1,32 @@
-'use client'
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { BackgroundAnimation } from './Background';
+import Modal from './components/Modal';
+import { offers } from './components/OffersData';
+import { TypeAnimation } from 'react-type-animation';
 
-import { motion } from 'framer-motion';
-import Typewriter from "react-ts-typewriter";
-import {BackgroundAnimation} from './Background';
+
 export const Screen7 = () => {
-    const offers = [
-        { title: 'Project Manager', details: '3 040 - 4 300 USD Net/month  B2B' },
-        { title: 'Frontend Developer', details: '4 050 - 6 070 USD Net/month  B2B' },
-        { title: 'Backend Developer', details: '5 820 - 7 590 USD Net/month  B2B' },
-        { title: 'UX/UI Designer', details: '5 060 - 5 820 USD Net/month  B2B' },
-        { title: 'QA Engineer', details: '4 820 - 6 200 USD Net/month  B2B' },
-        { title: 'Fullstack Developer', details: '6 800 - 8 070 USD Net/month  B2B' },
-    ];
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [selectedOffer, setSelectedOffer] = useState(null);
 
-    // Funkcja dzieląca tablicę ofert na mniejsze fragmenty
     const chunkArray = (arr: any[], chunkSize: number) => {
         let results = [];
         while (arr.length) {
             results.push(arr.splice(0, chunkSize));
         }
         return results;
+    };
+
+    const handleScreenClick = (e: { target: { id: string } }) => {
+        if (e.target.id === 'screen7-container') {
+            setModalOpen(false);
+        }
+    };
+
+    const handleFindOutMore = (offer: any) => {
+        setSelectedOffer(offer);
+        setModalOpen(true);
     };
 
     const chunkedOffers = chunkArray([...offers], 2);
@@ -30,7 +37,7 @@ export const Screen7 = () => {
             y: 0,
             opacity: 1,
             transition: {
-                when: "beforeChildren",
+                when: 'beforeChildren',
                 staggerChildren: 0.1,
             },
         },
@@ -42,13 +49,27 @@ export const Screen7 = () => {
     };
 
     return (
-
-        <div className="w-screen h-[110vh] flex flex-col items-center justify-center screen7-background relative" style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh', zIndex: 10 }}>
-            <div className='w-screen h-[110vh] absolute'>
+        <div
+            id="carrier"
+            className="w-screen h-[110vh] flex flex-col items-center justify-center screen7-background relative"
+            style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh', zIndex: 10 }}
+            onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => handleScreenClick(e)}
+        >
+            <div className="w-screen h-[110vh] absolute">
                 <BackgroundAnimation />
             </div>
             <h1 className="text-6xl font-medium text-[#D9B55E] mb-20 z-30 relative">
-                <Typewriter cursor={false} text="Current job offers" />
+            <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
+            <TypeAnimation
+            sequence={[
+            "Current job offers",
+            ]}
+            wrapper="span"
+            speed={10}
+            cursor={false}
+            />
+</h3>
+
             </h1>
             {chunkedOffers.map((chunk, chunkIndex) => (
                 <motion.div
@@ -64,8 +85,6 @@ export const Screen7 = () => {
                             className="bg-black bg-opacity-50 p-10 rounded-full flex items-center space-x-4 w-[calc(50%-4rem)] z-30"
                             variants={itemVariants}
                             whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                            onClick={() => {
-                            }}
                         >
                             <div className="flex-1 ml-10">
                                 <h2 className="text-2xl text-[#D9B55E]">{offer.title}</h2>
@@ -73,10 +92,9 @@ export const Screen7 = () => {
                             </div>
                             <div className="ml-auto">
                                 <motion.button
-                                    whileHover={{ scale: 1.1, backgroundColor: "#616161" }}
+                                    whileHover={{ scale: 1.1, backgroundColor: '#616161' }}
                                     className="bg-[#747474] bg-opacity-30 hover:bg-gray-600 text-[#D9B55E] py-3 px-6 rounded-full transition duration-300 ml-5"
-                                    onClick={() => {
-                                    }}
+                                    onClick={() => handleFindOutMore(offer)}
                                 >
                                     Find Out More →
                                 </motion.button>
@@ -85,6 +103,20 @@ export const Screen7 = () => {
                     ))}
                 </motion.div>
             ))}
+            <AnimatePresence>
+                {isModalOpen && (
+                    <Modal
+                        offer={{
+                            title: (selectedOffer as any)?.title || '',
+                            details: (selectedOffer as any)?.details || '',
+                            jobDescription: (selectedOffer as any)?.jobDescription || [],
+                            basicRequirements: (selectedOffer as any)?.basicRequirements || [],
+                            niceToHave: (selectedOffer as any)?.niceToHave || [],
+                        }}
+                        handleClose={() => setModalOpen(false)}
+                    />
+                )}
+            </AnimatePresence>
         </div>
     );
 };

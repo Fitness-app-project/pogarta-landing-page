@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import PogartaSvg from "/public/images/Pogarta.svg"
 import Image from "next/image"
 import { Link } from 'react-scroll';
-import Typewriter from "react-ts-typewriter";
+import { TypeAnimation } from 'react-type-animation';
 
 export const Menu = () => {
     return (
@@ -25,19 +25,44 @@ export const Menu = () => {
             </motion.div>
             <div className="flex justify-evenly items-center gap-12 text-xl ">
     <Link to="home" smooth={true} duration={500} className="tracking-widest z-50">
-        <Typewriter text="Home" speed={200}cursor={false} />
+        <TypeAnimation
+            sequence={["Home"]}
+            wrapper="span"
+            speed={20}
+            cursor={false}
+        />
     </Link>
     <Link to="portfolio" smooth={true} duration={500} className="tracking-widest z-50">
-        <Typewriter text="Portfolio" speed={200}cursor={false} />
+        <TypeAnimation
+            sequence={["Portfolio"]}
+            wrapper="span"
+            speed={20}
+            cursor={false}
+        />
     </Link>
     <Link to="about" smooth={true} duration={500} className="tracking-widest z-50">
-        <Typewriter text="About us" speed={200}cursor={false} />
+        <TypeAnimation
+            sequence={["About us"]}
+            wrapper="span"
+            speed={20}
+            cursor={false}
+        />
     </Link>
     <Link to="carrier" smooth={true} duration={500} className="tracking-widest z-50">
-        <Typewriter text="Carrier" speed={200} cursor={false}/>
+        <TypeAnimation
+            sequence={["Carrier"]}
+            wrapper="span"
+            speed={20}
+            cursor={false}
+        />
     </Link>
     <Link to="contact" smooth={true} duration={500} className="tracking-widest z-50">
-        <Typewriter text="Contact" speed={200} cursor={false} />
+        <TypeAnimation
+            sequence={["Contact"]}
+            wrapper="span"
+            speed={20}
+            cursor={false}
+        />
     </Link>
 </div>
         </div>
