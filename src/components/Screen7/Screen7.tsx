@@ -18,16 +18,17 @@ export const Screen7 = () => {
         return results;
     };
 
-    const handleScreenClick = (e: { target: { id: string } }) => {
-        if (e.target.id === 'screen7-container') {
+    const handleScreenClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        const target = e.target as HTMLElement;  // Cast to HTMLElement to ensure 'id' is accessible
+        if (target.id === 'screen7-container') {
             setModalOpen(false);
         }
     };
-
     const handleFindOutMore = (offer: any) => {
         setSelectedOffer(offer);
         setModalOpen(true);
     };
+    
 
     const chunkedOffers = chunkArray([...offers], 2);
 
