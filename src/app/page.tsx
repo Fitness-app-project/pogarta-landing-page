@@ -1,16 +1,6 @@
 'use client'
 
-import CustomCursor from "@/components/CustomCursor/CustomCursor";
-import { Footer } from "@/components/Footer/Footer";
-import { FooterBar } from "@/components/FooterBar/FooterBar";
-import { Menu } from "@/components/Menu/Menu";
-import { Screen1 } from "@/components/Screen1/Screen1";
-import { Screen2 } from "@/components/Screen2/Screen2";
-import { Screen3 } from "@/components/Screen3/Screen3";
-import { Screen4 } from "@/components/Screen4/Screen4";
-import { Screen5 } from "@/components/Screen5/Screen5";
-import { Screen6 } from "@/components/Screen6/Screen6";
-import { Screen7 } from "@/components/Screen7/Screen7";
+
 import ScreensManager from "./ScreensManager";
 export default function Home() {
   return (

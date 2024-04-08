@@ -17,10 +17,10 @@ export const Screen2 = () => {
                         className="flex inset-0 items-center gap-8 w-[280px] h-[20vh] px-2 m-auto z-10 transition-all duration-200 ease-in-out rounded-lg"
                         key={index}
                     >
-                        <span className={`text-5xl font-extrabold`} style={{ color: item.color }}>
+                        <span className={`sm:text-xl sm:font-bold md:text-2xl md:font-extrabold lg:text-4xl`} style={{ color: item.color }}>
                             <CountUp end={item.end} duration={2.5} />+
                         </span>
-                        <span className="text-xl font-medium">
+                        <span className="sm:text-xl md:text-2xl lg:text-3xl font-semibold">
                             {item.text}
                         </span>
                     </motion.div>
