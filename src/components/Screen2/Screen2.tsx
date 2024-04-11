@@ -18,7 +18,7 @@ export const Screen2 = () => {
                         key={index}
                     >
                         <span className={`text-5xl font-extrabold`} style={{ color: item.color }}>
-                            <CountUp end={item.end} duration={2.5} />+
+                        <CountUp end={item.end} duration={2.5} />
                         </span>
                         <span className="text-xl font-medium">
                             {item.text}

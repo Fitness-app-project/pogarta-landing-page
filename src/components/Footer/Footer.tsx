@@ -51,8 +51,7 @@ export const Footer = () => {
         <div className="flex flex-col gap-4 font-bold text-xl mt-2">
         <span className="font-extrabold mt- ">Call or text</span>
 
-          <span>+48 123 456 789</span>
-          <span>+48 123 456 789</span>
+          {/* <span>+48 123 456 789</span> */}
           <span>hello@pogarta.com</span>
         </div>
       </div>
