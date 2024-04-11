@@ -63,13 +63,13 @@ export const Footer = () => {
 
       <div className="flex flex-col text-white ml-40 ">
         <h2 className="text-4xl font-semibold text-[#A98C53] tracking-widest">Contact us:</h2>
-        <p className="mt-4 text-xl ">
+        <p className="mt-10 text-xl ">
           Custom Solutions for Your Specific Needs. <br />
           Our Expert Team will Help You Succeed. <br />
 
         </p>
         <div className="flex flex-col gap-4 font-bold text-xl mt-2">
-        <span className="font-extrabold mt- ">Call or text</span>
+        {/* <span className="font-extrabold mt- ">Call or text</span> */}
 
           {/* <span>+48 123 456 789</span> */}
           <span>hello@pogarta.com</span>
