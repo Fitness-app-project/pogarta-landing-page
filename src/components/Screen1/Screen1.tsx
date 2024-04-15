@@ -139,14 +139,26 @@ export const Screen1 = () => {
         </motion.div>
              
         {/* </div> */}
-        <motion.div 
-          animate={{ y: ["0%", "1%", "0%"] }}
-          transition={{ yoyo:Infinity ,duration: 2, repeat: Infinity }}
-          className="z-0 mb-5"
-        >
           {/* <Image src={SPM} alt="Sic Parvis Magna" /> */}
-          <Logo2/>
-        </motion.div>
+          <motion.div
+            animate={{ y: ["0%", "1%", "0%"] }}
+            transition={{ yoyo: Infinity, duration: 2, repeat: Infinity }}
+            className="hidden md:block z-0 mb-5"
+          >
+            <Logo2 />
+          </motion.div >
+          
+          
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2, delay: 2.35 }}
+            className="block md:hidden"
+          >
+            <h1 className="text-white font-semibold tracking-widest text-[70px] sm:text-[100px] ml-10 sm:ml-0">
+              POGARTA
+            </h1>
+          </motion.div>
         
         <p className="absolute bottom-[22vh] sm:text-base md:text-lg md:tracking-widest text-[#747474] z-10">
           From small beginnings come great things
