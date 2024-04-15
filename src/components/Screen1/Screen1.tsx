@@ -39,6 +39,7 @@ const Logo = () => {
       <Lottie options={defaultOptions} height={height} width={width}/></div>
   );
 }
+
 const Logo2 = () => {
   const [showLogo, setShowLogo] = useState(false);
 
@@ -112,31 +113,32 @@ export const Screen1 = () => {
     }, 2000); 
     return () => clearTimeout(timer);
   }, []);
-    return (
-      
-<div className="w-screen h-[70vh] flex flex-col justify-center items-center text-[#D9B55E] z-10">
-{/* <AnimatedBackground /> */}
-{/* <div className='w-screen h-[110vh] absolute'>
-                <BackgroundAnimation />
-            </div>        */}
-            <div className='w-screen h-[110vh] absolute opacity-[0.5] z-10'>
-            {/* <AnimatedLogoBackground width={2500} height={862}/> */}
-            <BackgroundAnimation/>
-            </div>
+
+    return (    
+      <div className="w-screen h-[70vh] flex flex-col justify-center items-center text-[#D9B55E] z-10">
+        {/* <AnimatedBackground /> */}
+        {/* <div className='w-screen h-[110vh] absolute'>
+          <BackgroundAnimation />
+        </div>        */}
+        <div className='w-screen h-[110vh] absolute opacity-[0.5] z-10'>
+          {/* <AnimatedLogoBackground width={2500} height={862}/> */}
+          <BackgroundAnimation/>
+        </div>
             
-             <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-20 mt-1 opacity-20" />
-             {/* <div className="absolute w-[200vh] bg-[#fff] "> */}
-             {/* <Logo/> */}
-             <motion.div
-      className='flex justify-center items-center absolute'
-      variants={logoVariants}
-      initial={animation}
-      animate={animation}
-    >
-      <Image src={pogartaLogo3} alt='Logo' width={500} height={500} />
-    </motion.div>
+        <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-20 mt-1 opacity-20" />
+        {/* <div className="absolute w-[200vh] bg-[#fff] "> */}
+        {/* <Logo/> */}
+        
+        <motion.div
+          className='flex justify-center items-center absolute'
+          variants={logoVariants}
+          initial={animation}
+          animate={animation}
+        >
+          <Image src={pogartaLogo3} alt='Logo' width={500} height={500} />
+        </motion.div>
              
-                       {/* </div> */}
+        {/* </div> */}
         <motion.div 
           animate={{ y: ["0%", "1%", "0%"] }}
           transition={{ yoyo:Infinity ,duration: 2, repeat: Infinity }}
@@ -145,7 +147,8 @@ export const Screen1 = () => {
           {/* <Image src={SPM} alt="Sic Parvis Magna" /> */}
           <Logo2/>
         </motion.div>
-        <p className="absolute bottom-[22vh] text-lg tracking-widest text-[#747474] z-10">
+        
+        <p className="absolute bottom-[22vh] sm:text-base md:text-lg md:tracking-widest text-[#747474] z-10">
           From small beginnings come great things
         </p>
       </div>

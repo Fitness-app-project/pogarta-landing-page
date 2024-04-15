@@ -76,10 +76,10 @@ const ScreensManager = () => {
       <Screen2/>
       </div>
 
-        <div style={{ position: 'sticky', top:-700 , zIndex: 1, opacity: screen3Opacity }} ref={screen3Ref}>
-          <Screen3/>
-        </div>
-      <div style={{position: 'sticky', top:-500 , zIndex: 1, opacity: screen4Opacity }} ref={screen4Ref}>
+      <div style={{ position: 'sticky', top:-700 , zIndex: 1, opacity: screen3Opacity }} ref={screen3Ref}>
+        <Screen3/>
+      </div>
+      <div style={{position: 'sticky', top:-1000 , zIndex: 1, opacity: screen4Opacity }} ref={screen4Ref}>
         <Screen4/>
       </div>
       <div style={{position: 'sticky', top:-100, zIndex: 1, opacity: screen7Opacity }} ref={screen7Ref}>

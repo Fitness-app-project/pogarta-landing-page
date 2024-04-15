@@ -1,15 +1,13 @@
 'use client'
 
 import { motion } from "framer-motion"
-import PogartaSvg from "/public/images/Pogarta.svg"
-import Image from "next/image"
 import { Link } from 'react-scroll';
 import { TypeAnimation } from 'react-type-animation';
 
 export const Menu = () => {
     return (
         <div className="w-full h-[10vh] flex justify-between items-center py-6 px-10 relative">
-        <motion.div
+            <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.5 }}
@@ -23,48 +21,48 @@ export const Menu = () => {
                     style={{ transform: "scale(2)", translate: "40px" }}
                 /> */}
             </motion.div>
-            <div className="flex justify-evenly items-center gap-12 text-xl ">
-    <Link to="home" smooth={true} duration={500} className="tracking-widest z-50">
-        <TypeAnimation
-            sequence={["Home"]}
-            wrapper="span"
-            speed={20}
-            cursor={false}
-        />
-    </Link>
-    <Link to="portfolio" smooth={true} duration={500} className="tracking-widest z-50">
-        <TypeAnimation
-            sequence={["Portfolio"]}
-            wrapper="span"
-            speed={20}
-            cursor={false}
-        />
-    </Link>
-    <Link to="about" smooth={true} duration={500} className="tracking-widest z-50">
-        <TypeAnimation
-            sequence={["About us"]}
-            wrapper="span"
-            speed={20}
-            cursor={false}
-        />
-    </Link>
-    <Link to="carrier" smooth={true} duration={500} className="tracking-widest z-50">
-        <TypeAnimation
-            sequence={["Carrier"]}
-            wrapper="span"
-            speed={20}
-            cursor={false}
-        />
-    </Link>
-    <Link to="contact" smooth={true} duration={500} className="tracking-widest z-50">
-        <TypeAnimation
-            sequence={["Contact"]}
-            wrapper="span"
-            speed={20}
-            cursor={false}
-        />
-    </Link>
-</div>
+            <div className="flex justify-evenly items-center gap-12 text-xs md:text-xl">
+                <Link to="home" smooth={true} duration={500} className="tracking-widest z-50">
+                    <TypeAnimation
+                        sequence={["Home"]}
+                        wrapper="span"
+                        speed={20}
+                        cursor={false}
+                    />
+                </Link>
+                <Link to="portfolio" smooth={true} duration={500} className="tracking-widest z-50">
+                    <TypeAnimation
+                        sequence={["Portfolio"]}
+                        wrapper="span"
+                        speed={20}
+                        cursor={false}
+                    />
+                </Link>
+                <Link to="about" smooth={true} duration={500} className="tracking-widest z-50">
+                    <TypeAnimation
+                        sequence={["About us"]}
+                        wrapper="span"
+                        speed={20}
+                        cursor={false}
+                    />
+                </Link>
+                <Link to="carrier" smooth={true} duration={500} className="tracking-widest z-50">
+                    <TypeAnimation
+                        sequence={["Carrier"]}
+                        wrapper="span"
+                        speed={20}
+                        cursor={false}
+                    />
+                </Link>
+                <Link to="contact" smooth={true} duration={500} className="tracking-widest z-50">
+                    <TypeAnimation
+                        sequence={["Contact"]}
+                        wrapper="span"
+                        speed={20}
+                        cursor={false}
+                    />
+                </Link>
+            </div>
         </div>
     )
 }

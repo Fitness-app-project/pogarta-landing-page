@@ -125,16 +125,16 @@ export const Screen4 = () => {
   ];
 
   return (
-    <div id="portfolio" className=" flex flex-col items-center text-center p-4 screen4-background w-screen h-[220vh]"  style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
-      <div className="flex flex-col items-center text-center p-4 bg-white " >
-          <h1 className="text-6xl font-elegant text-deep-ocean mt-20 leading-tight text-gray-600">
+    <div id="portfolio" className="flex flex-col items-center text-center p-4 screen4-background w-screen h-[220vh]"  style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
+      <div className="flex flex-col items-center text-center p-4 bg-white" >
+          <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl font-bold md:font-normal font-elegant text-deep-ocean mt-8 xl:mt-20 leading-tight text-gray-600">
             Imagine Innovate Implement 
           </h1>
-          <p className="text-lg mt-10 text-gray-600  ">
+          <p className="text-base xl:text-lg mt-6 xl:mt-10 text-gray-600">
             Trusted by industry leaders, see who we have helped thrive. <br /> Whose potential have we unlocked?
           </p>
         </div>
-        <div className="grid grid-cols-4 gap- bg-white w-screen px-64 mb">
+        <div className="w-screen grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:px-64">
             {companies.map((company, index) => (
               <CompanyCell key={index} logo={company.logo} text={company.text} altText={company.altText} />
             ))}
