@@ -217,7 +217,7 @@ export const Screen3 = () => {
                 </motion.div>
             </div>
 
-            <div className='flex items-center gap-10 sm:mt-48  mt-32'>
+            <div className='hidden sm:flex items-center gap-10 sm:mt-48 md:mt-64 lg:mt-32'>
                 <h3 className="font-medium text-[40px] leading-[80px] text-white">Our portfolio in numbers</h3>
                 {/* <button className="btn buttonBgTransparent border-none w-[300px] h-[60px] text-[#747474]" style={{ borderRadius: "50px" }}>
                     Our projects
@@ -225,7 +225,7 @@ export const Screen3 = () => {
                 </button> */}
             </div>
 
-            <div className="flex justify-evenly items-center mt-12 gap-16">
+            <div className="hidden sm:flex justify-evenly items-center gap-16 mt-52 sm:mt-12">
 
                 <div className="flex flex-col items-center gap-5">
                     <motion.span

@@ -59,51 +59,55 @@ export const Screen7 = () => {
             <div className="w-screen h-[110vh] absolute">
                 <BackgroundAnimation />
             </div>
-            <h1 className="text-6xl font-medium text-[#D9B55E] mb-20 z-30 relative">
-            <h3 className="font-normal text-[40px] leading-[80px] tracking-wide">
-            <TypeAnimation
-            sequence={[
-            "Current job offers",
-            ]}
-            wrapper="span"
-            speed={10}
-            cursor={false}
-            />
-</h3>
-
+            <h1 className="text-[#D9B55E] mb-0 md:mb-6 lg:mb-20 z-30 relative">
+                <h3 className="text-3xl md:text-5xl 2xl:text-6xl font-normal leading-[80px] tracking-wide">
+                    <TypeAnimation
+                        sequence={[
+                        "Current job offers",
+                        ]}
+                        wrapper="span"
+                        speed={10}
+                        cursor={false}
+                    />
+                </h3>
             </h1>
-            {chunkedOffers.map((chunk, chunkIndex) => (
+
+            {/* {chunkedOffers.map((chunk, chunkIndex) => (
                 <motion.div
                     className="flex justify-center space-x-8 mb-8 z-30"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
                     key={chunkIndex}
-                >
-                    {chunk.map((offer, index) => (
-                        <motion.div
-                            key={index}
-                            className="bg-black bg-opacity-50 p-10 rounded-full flex items-center space-x-4 w-[calc(50%-4rem)] z-30"
-                            variants={itemVariants}
-                            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                        >
-                            <div className="flex-1 ml-10">
-                                <h2 className="text-2xl text-[#D9B55E]">{offer.title}</h2>
-                                <p className="text-[#B7B7B7] text-lg">{offer.details}</p>
-                            </div>
-                            <div className="ml-auto">
-                                <motion.button
-                                    whileHover={{ scale: 1.1, backgroundColor: '#616161' }}
-                                    className="bg-[#747474] bg-opacity-30 hover:bg-gray-600 text-[#D9B55E] py-3 px-6 rounded-full transition duration-300 ml-5"
-                                    onClick={() => handleFindOutMore(offer)}
-                                >
-                                    Find Out More →
-                                </motion.button>
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
-            ))}
+                > */}
+            <div
+                className='w-screen grid grid-cols-1 lg:grid-cols-2 gap-8 md:px-16 lg:px-4 xl:px-16 2xl:px-40'
+            >
+                {offers.map((offer, index) => (
+                    <motion.div
+                        key={index}
+                        className="bg-black bg-opacity-50 p-6 sm:p-10 rounded-full flex items-center space-x-4 w-auto z-30"
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                    >
+                        <div className="flex-1 ml-10">
+                            <h2 className="text-2xl text-[#D9B55E]">{offer.title}</h2>
+                            <p className="text-[#B7B7B7] text-lg">{offer.details}</p>
+                        </div>
+                        <div className="ml-auto">
+                            <motion.button
+                                whileHover={{ scale: 1.1, backgroundColor: '#616161' }}
+                                className="bg-[#747474] bg-opacity-30 hover:bg-gray-600 text-[#D9B55E] py-3 px-6 rounded-full transition duration-300 ml-5"
+                                onClick={() => handleFindOutMore(offer)}
+                            >
+                                Find Out More →
+                            </motion.button>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+                {/* </motion.div>
+            ))} */}
             <AnimatePresence>
                 {isModalOpen && (
                     <Modal
