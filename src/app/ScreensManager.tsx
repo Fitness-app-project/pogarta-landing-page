@@ -70,22 +70,37 @@ const ScreensManager = () => {
   return (
     <>
       <div style={{ zIndex: 1, position: 'sticky', top: 0, opacity: screen1Opacity }} ref={screen1Ref}>
-      {/* <ScreenTest/> */}
-      <Menu/>
-      <Screen1/>
-      <Screen2/>
+        {/* <ScreenTest/> */}
+        <Menu/>
+        <Screen1/>
+        <Screen2/>
       </div>
 
-      <div style={{ position: 'sticky', top:-700 , zIndex: 1, opacity: screen3Opacity }} ref={screen3Ref}>
+      <div 
+        style={{ position: 'sticky', top:-700, zIndex: 1, opacity: screen3Opacity }}
+        className="translate-x-[-25px] lg:translate-x-[0px]"
+        ref={screen3Ref}
+      >
         <Screen3/>
       </div>
-      <div style={{position: 'sticky', top:-1000 , zIndex: 1, opacity: screen4Opacity }} ref={screen4Ref}>
+      <div
+        style={{position: 'sticky', top:-1000 , zIndex: 1, opacity: screen4Opacity }}
+        className="translate-x-[-25px] lg:translate-x-[0px]"
+        ref={screen4Ref}
+      >
         <Screen4/>
       </div>
-      <div style={{position: 'sticky', top:-100, zIndex: 1, opacity: screen7Opacity }} ref={screen7Ref}>
+      <div 
+        style={{position: 'sticky', top:-100, zIndex: 1, opacity: screen7Opacity }} 
+        className="translate-x-[-25px] lg:translate-x-[0px]"
+        ref={screen7Ref}
+      >
         <Screen7/>
       </div>
-      <div style={{ zIndex: 1, position: 'sticky'}}>
+      <div
+        style={{ zIndex: 1, position: 'sticky'}}
+        className="translate-x-[-25px] lg:translate-x-[0px]"
+      >
         <Footer/>
         <FooterBar/>
       </div>
