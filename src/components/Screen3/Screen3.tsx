@@ -41,7 +41,7 @@ export const Screen3 = () => {
 
 
     return (
-        <div className="sticky top-0 z-50">
+        <div className="top-0 z-50">
 
         <div id="about" className="w-screen h-[180vh] py-20 px-10 sm:px-12 md:px-24 lg:px-32 xl:px-40 2xl:px-64 screen3-background" style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
 
