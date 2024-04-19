@@ -129,14 +129,14 @@ export const Screen1 = () => {
         {/* <div className="absolute w-[200vh] bg-[#fff] "> */}
         {/* <Logo/> */}
         
-        <motion.div
+        {/* <motion.div
           className='flex justify-center items-center absolute'
           variants={logoVariants}
           initial={animation}
           animate={animation}
         >
           <Image src={pogartaLogo3} alt='Logo' width={500} height={500} />
-        </motion.div>
+        </motion.div> */}
              
         {/* </div> */}
           {/* <Image src={SPM} alt="Sic Parvis Magna" /> */}

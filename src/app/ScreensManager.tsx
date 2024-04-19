@@ -68,7 +68,7 @@ const ScreensManager = () => {
     };
   }, []);
 
-  if(isMobile) {
+  if(true) {
     return (
       <>
         <div>

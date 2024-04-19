@@ -13,13 +13,6 @@ export const Menu = () => {
                 transition={{ duration: 0.5 }}
                 className="flex items-center z-10"
             >
-                {/* <Image 
-                    alt="Logo"
-                    src={PogartaSvg}
-                    width={100}
-                    height={100}
-                    style={{ transform: "scale(2)", translate: "40px" }}
-                /> */}
             </motion.div>
             <div className="flex justify-evenly items-center gap-12 text-xs md:text-xl">
                 <Link to="home" smooth={true} duration={500} className="tracking-widest z-50">
@@ -38,15 +31,15 @@ export const Menu = () => {
                         cursor={false}
                     />
                 </Link>
-                <Link to="about" smooth={true} duration={500} className="tracking-widest z-50">
+                {/* <Link to="about" smooth={true} duration={500} className="tracking-widest z-50">
                     <TypeAnimation
                         sequence={["About us"]}
                         wrapper="span"
                         speed={20}
                         cursor={false}
                     />
-                </Link>
-                <Link to="carrier" smooth={true} duration={500} className="tracking-widest z-50">
+                </Link> */}
+                {/* <Link to="carrier" smooth={true} duration={500} className="tracking-widest z-50">
                     <TypeAnimation
                         sequence={["Carrier"]}
                         wrapper="span"
@@ -61,7 +54,7 @@ export const Menu = () => {
                         speed={20}
                         cursor={false}
                     />
-                </Link>
+                </Link> */}
             </div>
         </div>
     )
