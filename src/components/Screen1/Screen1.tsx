@@ -11,6 +11,7 @@ import { BackgroundAnimation } from "../Screen7/Background";
 import AnimatedLogoBackground from "./components/Background";
 import pogartaLogo3 from "../../../public/pogartaLogoSquare.png";
 import { useState, useEffect } from "react";
+import { isDesktop } from "react-device-detect";
 // const AnimatedBackground = ({ delay = 0 }) => (
 //   <motion.div
 //     initial={{ x: '-110vw' }}
@@ -115,7 +116,7 @@ export const Screen1 = () => {
   }, []);
 
     return (    
-      <div className="w-screen h-[70vh] flex flex-col justify-center items-center text-[#D9B55E] z-10">
+      <div className={`w-screen ${isDesktop ? "h-[70vh]" : "h-[50vh]"} flex flex-col justify-center items-center text-[#D9B55E] z-10`}>
         {/* <AnimatedBackground /> */}
         {/* <div className='w-screen h-[110vh] absolute'>
           <BackgroundAnimation />
@@ -126,41 +127,43 @@ export const Screen1 = () => {
         </div>
             
         <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-20 mt-1 opacity-20" />
-        {/* <div className="absolute w-[200vh] bg-[#fff] "> */}
-        {/* <Logo/> */}
         
-        {/* <motion.div
-          className='flex justify-center items-center absolute'
-          variants={logoVariants}
-          initial={animation}
-          animate={animation}
-        >
-          <Image src={pogartaLogo3} alt='Logo' width={500} height={500} />
-        </motion.div> */}
-             
-        {/* </div> */}
-          {/* <Image src={SPM} alt="Sic Parvis Magna" /> */}
+
+        {isDesktop && (
           <motion.div
-            animate={{ y: ["0%", "1%", "0%"] }}
-            transition={{ yoyo: Infinity, duration: 2, repeat: Infinity }}
-            className="hidden md:block z-0 mb-5"
+            className='flex justify-center items-center absolute'
+            variants={logoVariants}
+            initial={animation}
+            animate={animation}
           >
-            <Logo2 />
-          </motion.div >
-          
-          
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2, delay: 2.35 }}
-            className="block md:hidden"
-          >
-            <h1 className="text-white font-semibold tracking-widest text-[70px] sm:text-[100px] ml-10 sm:ml-0">
-              POGARTA
-            </h1>
+            <Image src={pogartaLogo3} alt='Logo' width={500} height={500} />
           </motion.div>
+        )}
+             
+          {isDesktop ? (
+            <motion.div
+              animate={{ y: ["0%", "1%", "0%"] }}
+              transition={{ yoyo: Infinity, duration: 2, repeat: Infinity }}
+              className="z-0 mb-5"
+            >
+              <Logo2 />
+            </motion.div >
+          ) : (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2, delay: 2.35 }}
+              className="w-screen"
+            >
+              <h1 className="text-white font-semibold tracking-widest text-[50px] ml-10 sm:ml-0">
+                POGARTA
+              </h1>
+            </motion.div>
+          )}
+          
+          
         
-        <p className="absolute bottom-[22vh] sm:text-base md:text-lg md:tracking-widest text-[#747474] z-10">
+        <p className="bottom-[22vh] sm:text-base md:text-lg md:tracking-widest text-[#747474] z-10">
           From small beginnings come great things
         </p>
       </div>

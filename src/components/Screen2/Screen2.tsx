@@ -23,7 +23,7 @@ export const Screen2 = () => {
             <div 
                 className={`
                     ${isDesktop && "w-screen flex justify-evenly text-white bg-[#000000] bg-opacity-10 h-[230px] z-1"}
-                    ${isMobile && "w-screen h-[320px] grid grid-cols-2 text-white bg-red-200"}
+                    ${isMobile && "w-screen h-[320px] grid grid-cols-2 text-white bg-[#000000] bg-opacity-10 translate-x-[-25px] px-4"}
                 `}
             >
                 {array.map((item, index) => (
