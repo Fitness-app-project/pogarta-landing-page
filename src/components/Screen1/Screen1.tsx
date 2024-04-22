@@ -163,7 +163,7 @@ export const Screen1 = () => {
           
           
         
-        <p className="bottom-[22vh] sm:text-base md:text-lg md:tracking-widest text-[#747474] z-10">
+        <p className={`${isDesktop && "relative"} bottom-[22vh] sm:text-base md:text-lg md:tracking-widest text-[#747474] z-10`}>
           From small beginnings come great things
         </p>
       </div>

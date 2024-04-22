@@ -2,6 +2,7 @@
 import { motion, useMotionTemplate, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
+import { isDesktop, isMobile } from 'react-device-detect';
 // import Typewriter from './components/Typewriter';
 import { TypeAnimation } from 'react-type-animation';
 
@@ -41,19 +42,17 @@ export const Screen3 = () => {
 
 
     return (
-        <div className="top-0 z-50">
+      <div className="top-0 z-50">
 
-        <div id="about" className="w-screen h-[180vh] py-20 px-10 sm:px-12 md:px-24 lg:px-32 xl:px-40 2xl:px-64 screen3-background" style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
+        <div id="about" className={`${isMobile && "translate-x-[-25px]"} w-screen h-[180vh] py-20 px-10 sm:px-12 md:px-24 lg:px-32 xl:px-40 2xl:px-64 screen3-background`} style={{ borderTopLeftRadius: isDesktop ? '3vh' : '0', borderTopRightRadius: isDesktop ? '3vh' : '0' }}>
 
             <div>
-                <p>
-                    {content.map((item: string) => (
-                        <ContentLine
-                            key={item}
-                            content={item}
-                        />
-                    ))}
-                </p>
+              {content.map((item: string) => (
+                  <ContentLine
+                      key={item}
+                      content={item}
+                  />
+              ))}
             </div>
             
             {/*  */}
@@ -276,6 +275,6 @@ export const Screen3 = () => {
             </div>
             </div>
 
-        </div>
+      </div>
     )
 }
