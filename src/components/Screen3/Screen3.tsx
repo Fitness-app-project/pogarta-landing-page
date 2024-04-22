@@ -91,7 +91,7 @@ export const Screen3 = () => {
     return (
       <div className="top-0 z-50">
 
-        <div id="about" className={`w-screen h-[180vh] py-20 sm:px-12 md:px-24 lg:px-32 xl:px-40 2xl:px-64 screen3-background`} style={{ borderTopLeftRadius: isDesktop ? '3vh' : '0', borderTopRightRadius: isDesktop ? '3vh' : '0' }}>
+        <div id="about" className={`w-screen ${isDesktop ? "h-[180vh]" : "h-auto"} py-20 sm:px-12 md:px-24 lg:px-32 xl:px-40 2xl:px-64 screen3-background`} style={{ borderTopLeftRadius: isDesktop ? '3vh' : '0', borderTopRightRadius: isDesktop ? '3vh' : '0' }}>
 
             <div>
               {isDesktop ? (
