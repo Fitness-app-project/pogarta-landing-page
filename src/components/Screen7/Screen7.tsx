@@ -6,6 +6,7 @@ import { BackgroundAnimation } from './Background';
 import Modal from './components/Modal';
 import { offers } from './components/OffersData';
 import { TypeAnimation } from 'react-type-animation';
+import { isDesktop } from 'react-device-detect';
 
 
 export const Screen7 = () => {
@@ -54,8 +55,8 @@ export const Screen7 = () => {
     return (
         <div
             id="carrier"
-            className="w-screen h-[110vh] flex flex-col items-center justify-center screen7-background relative"
-            style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh', zIndex: 10 }}
+            className={`w-screen ${isDesktop ? "h-[110vh]" : "h-auto"} flex flex-col items-center justify-center screen7-background relative py-6`}
+            style={{ borderTopLeftRadius: isDesktop ? '3vh' : '0', borderTopRightRadius: isDesktop ? '3vh' : '0', zIndex: 10 }}
             onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => handleScreenClick(e)}
         >
             <div className="w-screen h-[110vh] absolute">
@@ -65,7 +66,7 @@ export const Screen7 = () => {
                 <h3 className="text-3xl md:text-5xl 2xl:text-6xl font-normal leading-[80px] tracking-wide">
                     <TypeAnimation
                         sequence={[
-                        "Current job offers",
+                            "Current job offers",
                         ]}
                         wrapper="span"
                         speed={10}

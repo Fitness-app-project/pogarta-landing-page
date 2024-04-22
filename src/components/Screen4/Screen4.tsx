@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from 'next/image';
+import { isDesktop } from "react-device-detect";
 
 const imagePath = "/images/Screen4images/";
 
@@ -60,72 +61,71 @@ export const Screen4 = () => {
       altText: 'Paidwork',
     },
     {
-        logo: `${imagePath}nokia logo.svg`,
-        text: 'Nokia',
-        altText: 'Nokia',
-      },
-      {
-        logo: `${imagePath}crowd_design_logo.png`,
-        text: 'Crowd Design',
-        altText: 'Crowd Design',
-      },
-      {
-        logo: `${imagePath}logo_new-1-4-e1643880844828-300x192.png`,
-        text: 'Internet Media Polska',
-        altText: 'INTERNET MEDIA POLSKA',
-      },
-      // {
-      //   logo: `${imagePath}bema_napis.svg`,
-      //   text: 'Leśny Park Bema',
-      //   altText: 'Leśny Park Bema',
-      // },
-      
-      {
-        logo: `${imagePath}webtom.png`,
-        text: 'Webtom',
-        altText: 'webtom',
-      },
-      {
-        logo: `${imagePath}Kobylin.svg`,
-        text: 'ROD miejski w Kobylinie',
-        altText: 'ROD miejski w Kobylinie',
-      },
-      {
-        logo: `${imagePath}Cruzzie.webp`,
-        text: 'Cruzzie',
-        altText: 'Cruzzie Inc.',
-      },
-      {
-        logo: `${imagePath}Brainnest.jfif`,
-        text: 'Brainnest',
-        altText: 'Brainnest',
-      },
-      {
-        logo: `${imagePath}inkubator_ilawa.png`,
-        text: 'Inkubator Technologiczny w Iławie',
-        altText: 'Inkubator Technologiczny w Iławie',
-      },
-      {
-        logo: `${imagePath}Pracownia Otwarta Dzika Śliwka.png`,
-        text: 'Pracownia Otwarta Dzika Śliwka',
-        altText: 'Pracownia Otwarta Dzika Śliwka',
-      },
-      {
-        logo: `${imagePath}Gyms buddy.svg`,
-        text: 'Gyms buddy',
-        altText: 'Gyms buddy',
-      },
-      //  {
-      //   logo: `${imagePath}inkubator_ilawa.png`,
-      //   text: 'Inkubator Technologiczny w Iławie',
-      //   altText: 'Inkubator Technologiczny w Iławie',
-      // },
+      logo: `${imagePath}nokia logo.svg`,
+      text: 'Nokia',
+      altText: 'Nokia',
+    },
+    {
+      logo: `${imagePath}crowd_design_logo.png`,
+      text: 'Crowd Design',
+      altText: 'Crowd Design',
+    },
+    {
+      logo: `${imagePath}logo_new-1-4-e1643880844828-300x192.png`,
+      text: 'Internet Media Polska',
+      altText: 'INTERNET MEDIA POLSKA',
+    },
+    // {
+    //   logo: `${imagePath}bema_napis.svg`,
+    //   text: 'Leśny Park Bema',
+    //   altText: 'Leśny Park Bema',
+    // },
+    {
+      logo: `${imagePath}webtom.png`,
+      text: 'Webtom',
+      altText: 'webtom',
+    },
+    {
+      logo: `${imagePath}Kobylin.svg`,
+      text: 'ROD miejski w Kobylinie',
+      altText: 'ROD miejski w Kobylinie',
+    },
+    {
+      logo: `${imagePath}Cruzzie.webp`,
+      text: 'Cruzzie',
+      altText: 'Cruzzie Inc.',
+    },
+    {
+      logo: `${imagePath}Brainnest.jfif`,
+      text: 'Brainnest',
+      altText: 'Brainnest',
+    },
+    {
+      logo: `${imagePath}inkubator_ilawa.png`,
+      text: 'Inkubator Technologiczny w Iławie',
+      altText: 'Inkubator Technologiczny w Iławie',
+    },
+    {
+      logo: `${imagePath}Pracownia Otwarta Dzika Śliwka.png`,
+      text: 'Pracownia Otwarta Dzika Śliwka',
+      altText: 'Pracownia Otwarta Dzika Śliwka',
+    },
+    {
+      logo: `${imagePath}Gyms buddy.svg`,
+      text: 'Gyms buddy',
+      altText: 'Gyms buddy',
+    },
+    //  {
+    //   logo: `${imagePath}inkubator_ilawa.png`,
+    //   text: 'Inkubator Technologiczny w Iławie',
+    //   altText: 'Inkubator Technologiczny w Iławie',
+    // },
       
       
   ];
 
   return (
-    <div id="portfolio" className="flex flex-col items-center text-center p-4 screen4-background w-screen h-[220vh]"  style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
+    <div id="portfolio" className={`flex flex-col items-center text-center p-4 screen4-background w-screen ${isDesktop ? "h-[220vh]" : "h-auto"}`}  style={{ borderTopLeftRadius: isDesktop ? '3vh' : '0', borderTopRightRadius: isDesktop ? '3vh' : '0' }}>
       <div className="flex flex-col items-center text-center p-4 bg-white" >
           <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl font-bold md:font-normal font-elegant text-deep-ocean mt-8 xl:mt-20 leading-tight text-gray-600">
             Imagine Innovate Implement 
