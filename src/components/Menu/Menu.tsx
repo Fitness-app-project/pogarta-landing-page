@@ -15,7 +15,7 @@ export const Menu = () => {
                 className="flex items-center z-10"
             >
             </motion.div>
-            <div className="flex justify-evenly items-center gap-12 text-xs md:text-xl">
+            <div className="flex justify-evenly items-center gap-6 md:gap-10 xl:gap-12 text-xs md:text-xl">
                 {/* <Link to="home" smooth={true} duration={500} className="tracking-widest z-50">
                     <TypeAnimation
                         sequence={["Home"]}

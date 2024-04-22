@@ -89,7 +89,7 @@ export const Screen7 = () => {
                 {offers.map((offer, index) => (
                     <motion.div
                         key={index}
-                        className="bg-black bg-opacity-50 p-6 sm:p-10 rounded-full flex items-center space-x-4 w-auto z-30"
+                        className={`bg-black bg-opacity-50 sm:p-10 ${isDesktop ? "rounded-full p-6" : "py-4 pr-1"} flex items-center space-x-4 w-auto z-30`}
                         variants={itemVariants}
                         whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                     >

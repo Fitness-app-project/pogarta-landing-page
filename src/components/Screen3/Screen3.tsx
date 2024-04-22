@@ -6,6 +6,7 @@ import { isDesktop, isMobile } from 'react-device-detect';
 // import Typewriter from './components/Typewriter';
 import { TypeAnimation } from 'react-type-animation';
 import { Content } from './Content';
+import { Statistics } from './Statistics';
 
 const content = [
     "We build new ventures and non-standard",
@@ -90,8 +91,7 @@ export const Screen3 = () => {
 
     return (
       <div className="top-0 z-50">
-
-        <div id="about" className={`w-screen ${isDesktop ? "h-[180vh]" : "h-auto"} py-32 sm:px-12 md:px-24 lg:px-32 xl:px-40 2xl:px-64 screen3-background`} style={{ borderTopLeftRadius: isDesktop ? '3vh' : '0', borderTopRightRadius: isDesktop ? '3vh' : '0' }}>
+        <div id="about" className={`w-screen ${isDesktop ? "h-[180vh]" : "h-auto"} py-12 sm:px-12 md:px-24 lg:px-32 xl:px-40 2xl:px-64 screen3-background`} style={{ borderTopLeftRadius: isDesktop ? '3vh' : '0', borderTopRightRadius: isDesktop ? '3vh' : '0' }}>
 
             <div>
               {isDesktop ? (
@@ -123,65 +123,18 @@ export const Screen3 = () => {
               text2='Collaboratively, we expedite startup growth, propelling them towards international triumph.'
             />
 
-            <div className='hidden sm:flex items-center gap-10 sm:mt-48 md:mt-64 lg:mt-32'>
-                <h3 className="font-medium text-[40px] leading-[80px] text-white">Our portfolio in numbers</h3>
+            <div className='flex items-center gap-10 mt-20 sm:mt-48 md:mt-64 lg:mt-52'>
+                <h3 className="w-screen text-center font-medium text-[30px] xl:text-[40px] leading-[80px] text-white">Our portfolio in numbers</h3>
                 {/* <button className="btn buttonBgTransparent border-none w-[300px] h-[60px] text-[#747474]" style={{ borderRadius: "50px" }}>
                     Our projects
                     <FaLongArrowAltRight size={32} />
                 </button> */}
             </div>
 
-            <div className="hidden sm:flex justify-evenly items-center gap-16 mt-52 sm:mt-12">
+            <Statistics />
 
-                <div className="flex flex-col items-center gap-5">
-                    <motion.span
-                        initial={{ scale: 2 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ duration: 1 }}
-                        viewport={{ once: true }}
-                        className="font-bold text-[60px] leading-[73px] text-[#DBB75F]"
-                    >
-                        20
-                    </motion.span>
-                    <p className="font-normal text-[20px] leading-[24px] tracking-widest text-white text-center uppercase">
-                        Portfolio companies
-                    </p>
-                    <p className="leading-[24px]"></p>
-                </div>
-                
-                <div className="flex flex-col items-center gap-5">
-                    <motion.span
-                        initial={{ scale: 2 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ duration: 1 }}
-                        viewport={{ once: true }}
-                        className="font-bold text-[60px] leading-[73px] text-[#DBB75F]"
-                    >
-                        350
-                    </motion.span>
-                    <p className="font-normal text-[20px] leading-[24px] tracking-widest text-white text-center uppercase">
-                    People involved <br />in our projects
-                    </p>
-                </div>
-
-                <div className="flex flex-col items-center gap-5">
-                    <motion.span
-                        initial={{ scale: 2 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ duration: 1 }}
-                        viewport={{ once: true }}
-                        className="font-bold text-[60px] leading-[73px] text-[#DBB75F]"
-                    >
-                        7
-                    </motion.span>
-                    <p className="font-normal text-[20px] leading-[24px] tracking-widest text-white text-center uppercase">
-                    Months to launch <br />a new venture
-                    </p>
-                </div>
-
-            </div>
-            </div>
-
+            
+        </div>
       </div>
     )
 }

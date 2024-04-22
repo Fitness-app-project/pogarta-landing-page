@@ -14,7 +14,7 @@ interface IProps {
 export const Content: React.FC<IProps> = ({ sequence, text1, text2 }) => {
 
     return (
-        <div className={`md:mt-16 xl:mt-32 flex xl:w-[900px] relative ${isDesktop ? "h-[20vh]" : "w-screen h-[400px]"}`}>
+        <div className={`md:mt-16 xl:mt-32 flex xl:w-[900px] relative ${isDesktop ? "h-[20vh]" : "w-screen h-[440px]"}`}>
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

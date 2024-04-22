@@ -71,7 +71,7 @@ const ScreensManager = () => {
   if(isMobile) {
     return (
       <>
-        <div>
+        <div className='h-[100vh]'>
           <Menu/>
           <Screen1/>
           <Screen2/>
