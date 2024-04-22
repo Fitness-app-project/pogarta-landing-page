@@ -44,7 +44,7 @@ export const Screen3 = () => {
     return (
       <div className="top-0 z-50">
 
-        <div id="about" className={`${isMobile && "translate-x-[-25px]"} w-screen h-[180vh] py-20 px-10 sm:px-12 md:px-24 lg:px-32 xl:px-40 2xl:px-64 screen3-background`} style={{ borderTopLeftRadius: isDesktop ? '3vh' : '0', borderTopRightRadius: isDesktop ? '3vh' : '0' }}>
+        <div id="about" className={`${isMobile && "translate-x-[-6vw]"} w-screen h-[180vh] py-20 px-10 sm:px-12 md:px-24 lg:px-32 xl:px-40 2xl:px-64 screen3-background`} style={{ borderTopLeftRadius: isDesktop ? '3vh' : '0', borderTopRightRadius: isDesktop ? '3vh' : '0' }}>
 
             <div>
               {content.map((item: string) => (
