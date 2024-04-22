@@ -155,7 +155,7 @@ export const Screen1 = () => {
               transition={{ duration: 2, delay: 2.35 }}
               className="w-screen"
             >
-              <h1 className="text-white font-semibold tracking-widest text-[50px] ml-10 sm:ml-0">
+              <h1 className="text-white font-semibold tracking-widest text-[50px] text-center">
                 POGARTA
               </h1>
             </motion.div>
