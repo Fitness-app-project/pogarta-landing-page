@@ -9,9 +9,10 @@ interface IProps {
     sequence: (string | number)[]
     text1: string
     text2: string
+    icon: number
 }
 
-export const Content: React.FC<IProps> = ({ sequence, text1, text2 }) => {
+export const Content: React.FC<IProps> = ({ sequence, text1, text2, icon }) => {
 
     return (
         <div className={`md:mt-16 xl:mt-32 flex xl:w-[900px] relative ${isDesktop ? "h-[20vh]" : "w-screen h-[440px]"}`}>
@@ -24,7 +25,7 @@ export const Content: React.FC<IProps> = ({ sequence, text1, text2 }) => {
             >
                 <Image
                     alt='Coin'
-                    src="/images/coin1.png"
+                    src={`/images/coin${icon}.png`}
                     width={400}
                     height={400}
                     className="scale-[0.4] md:scale-75 xl:scale-100"
@@ -39,7 +40,7 @@ export const Content: React.FC<IProps> = ({ sequence, text1, text2 }) => {
             >
 
                 <h3 className={`font-normal text-[35px] xl:text-[40px] leading-[80px] tracking-wide ${isMobile && "h-[160px]"}`}>
-                    Building{" "}
+                    Building{" "} <br />
                     <TypeAnimation
                         sequence={sequence}
                         wrapper="span"

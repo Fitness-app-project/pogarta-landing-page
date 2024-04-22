@@ -116,7 +116,7 @@ export const Screen1 = () => {
   }, []);
 
     return (    
-      <div className={`w-screen ${isDesktop ? "h-[70vh]" : "h-[50vh]"} flex flex-col justify-center items-center text-[#D9B55E] z-10`}>
+      <div className={`w-screen ${isDesktop ? "h-[70vh]" : "h-[55vh]"} flex flex-col justify-center items-center text-[#D9B55E] z-10`}>
         {/* <AnimatedBackground /> */}
         {/* <div className='w-screen h-[110vh] absolute'>
           <BackgroundAnimation />

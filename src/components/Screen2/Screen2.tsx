@@ -21,7 +21,7 @@ export const Screen2 = () => {
             <div 
                 className={`
                     ${isDesktop && "w-screen flex justify-evenly text-white bg-[#000000] bg-opacity-10 h-[230px] z-1"}
-                    ${isMobile && "w-screen h-[320px] grid grid-cols-2 text-white bg-[#000000] bg-opacity-10 px-8"}
+                    ${isMobile && "w-screen h-[320px] grid grid-cols-2 text-white bg-[#000000] bg-opacity-10 px-8 translate-y-[4vh] pt-4"}
                 `}
             >
                 {array.map((item, index) => (
@@ -31,7 +31,7 @@ export const Screen2 = () => {
                         whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px 2px #DBB75F", borderRadius: "15px" }}
                         className={`
                             ${isDesktop && "flex inset-0 items-center gap-8 w-[280px] h-[20vh] px-2 m-auto z-10 transition-all duration-200 ease-in-out rounded-lg"}
-                            ${isMobile && "flex items-center gap-8 h-[160px] z-10 transition-all duration-200 ease-in-out"}
+                            ${isMobile && "flex items-center gap-8 h-[80px] z-10 transition-all duration-200 ease-in-out"}
                         `}
                         key={index}
                     >

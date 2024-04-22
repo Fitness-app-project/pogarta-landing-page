@@ -115,12 +115,14 @@ export const Screen3 = () => {
               sequence={sequence1}
               text1="Crafting Visions into reality."
               text2="Our expert team transforms bold ideas into tangible successes, across a spectrum of ventures and innovations."
+              icon={1}
             />
 
             <Content 
               sequence={sequence2}            
               text1='Our expertise from launching and scaling various tech ventures enables us to assist early-stage startups and their founders.'
               text2='Collaboratively, we expedite startup growth, propelling them towards international triumph.'
+              icon={2}
             />
 
             <div className='flex items-center gap-10 mt-20 sm:mt-48 md:mt-64 lg:mt-52'>
