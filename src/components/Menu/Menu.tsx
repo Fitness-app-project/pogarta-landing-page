@@ -7,7 +7,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 export const Menu = () => {
     return (
-        <div className={`${isDesktop ? "w-full px-10" : "w-screen px-6 translate-x-[-25px]"} h-[10vh] flex justify-between items-center py-6 relative`}>
+        <div className={`${isDesktop ? "w-full px-10" : "w-screen px-6"} h-[10vh] flex justify-between items-center py-6 relative`}>
             <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
