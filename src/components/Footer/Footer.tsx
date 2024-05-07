@@ -46,16 +46,16 @@ export const Footer = () => {
         
           <div className="flex flex-col justify-center">
             <div className="flex flex-wrap items-center mt-10">
-              <a href="#" onMouseEnter={() => setHoverFB(true)} onMouseLeave={() => setHoverFB(false)}>
+              <a href="https://www.facebook.com/people/Pogarta/61556942754758/" target="_blank" onMouseEnter={() => setHoverFB(true)} onMouseLeave={() => setHoverFB(false)}>
                 <Image alt="FB" src={hoverFB ? FBColor : FB} width={100} height={100} style={imageStyle(hoverFB)} />
                 </a>
-              <a href="#" onMouseEnter={() => setHoverIG(true)} onMouseLeave={() => setHoverIG(false)}>
+              <a href="https://www.instagram.com/pogarta.softwarehouse/" target="_blank" onMouseEnter={() => setHoverIG(true)} onMouseLeave={() => setHoverIG(false)}>
                 <Image alt="IG" src={hoverIG ? IGColor : IG} width={100} height={100} style={imageStyle(hoverIG)} />
               </a>
-              <a href="#" onMouseEnter={() => setHoverLinkedIn(true)} onMouseLeave={() => setHoverLinkedIn(false)}>
+              <a href="https://www.linkedin.com/company/pogarta/" target="_blank" onMouseEnter={() => setHoverLinkedIn(true)} onMouseLeave={() => setHoverLinkedIn(false)}>
                 <Image alt="LinkedIn" src={hoverLinkedIn ? LinkedInColor : LinkedIn} width={100} height={100} style={imageStyle(hoverLinkedIn)} />
               </a>
-              <a href="#" onMouseEnter={() => setHoverX(true)} onMouseLeave={() => setHoverX(false)}>
+              <a href="https://twitter.com/Pogarta_" target="_blank" onMouseEnter={() => setHoverX(true)} onMouseLeave={() => setHoverX(false)}>
                 <Image alt="X" src={hoverX ? XColor : X} width={100} height={100} style={imageStyle2(hoverX)} />
               </a>
                 {/* <a href="#" onMouseEnter={() => setHoverClutch(true)} onMouseLeave={() => setHoverClutch(false)}>
