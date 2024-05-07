@@ -126,7 +126,7 @@ export const Screen1 = () => {
           <BackgroundAnimation/>
         </div>
             
-        <Image src={bg} layout="fill" objectFit="cover" alt="background" className="z-20 mt-1 opacity-20" />
+        <Image src={bg} layout="fill" objectFit="cover" alt="background" className={`z-20 mt-1 opacity-20 ${isDesktop ? "" : "hidden"}`} />
         
 
         {isDesktop && (
@@ -163,7 +163,7 @@ export const Screen1 = () => {
           
           
         
-        <p className={`${isDesktop && "relative"} bottom-[22vh] sm:text-base md:text-lg md:tracking-widest text-[#747474] z-10`}>
+        <p className={`${isDesktop && "absolute"} bottom-[28vh] sm:text-base md:text-lg md:tracking-widest text-[#747474] z-10`}>
           From small beginnings come great things
         </p>
       </div>

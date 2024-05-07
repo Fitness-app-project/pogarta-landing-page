@@ -30,17 +30,18 @@ export const Screen2 = () => {
                         animate={{ scale: 1 }}
                         whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px 2px #DBB75F", borderRadius: "15px" }}
                         className={`
-                            ${isDesktop && "flex inset-0 items-center gap-8 w-[280px] h-[20vh] px-2 m-auto z-10 transition-all duration-200 ease-in-out rounded-lg"}
-                            ${isMobile && "flex items-center gap-8 h-[80px] z-10 transition-all duration-200 ease-in-out"}
+                            ${isDesktop && "flex inset-0 items-center gap-8 w-[280px] h-[20vh] px-2 m-auto z-10 transition-all duration-200 ease-in-out rounded-lg mb-[5vh]"}
+                            ${isMobile && "flex items-center gap-2 h-[80px] w-[20vh] z-10 transition-all duration-200 ease-in-out flex-col "}
                         `}
                         key={index}
                     >
-                        <span className={`text-xl font-extrabold lg:text-4xl`} style={{ color: item.color }}>
+                        <span className={` ${isDesktop ? "text-xl font-extrabold lg:text-4xl":"text-[35px] font-extrabold"}`} style={{ color: item.color }}>
                             <CountUp end={item.end} duration={2.5} />+
                         </span>
-                        <span className="sm:text-xl md:text-2xl lg:text-3xl font-semibold">
-                            {item.text}
-                        </span>
+                        <span className={`sm:text-xl md:text-2xl lg:text-3xl font-semibold ${isDesktop ? "" : "text-center flex flex-col items-center justify-center h-full"}`} style={{ display: 'flex' }}>
+  {item.text}
+</span>
+
                     </motion.div>
                 ))}
             </div>
