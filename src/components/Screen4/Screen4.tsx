@@ -96,7 +96,7 @@ export const Screen4 = () => {
       altText: 'Cruzzie Inc.',
     },
     {
-      logo: `${imagePath}Brainnest.jfif`,
+      logo: `${imagePath}Brainnest.jpeg`,
       text: 'Brainnest',
       altText: 'Brainnest',
     },
