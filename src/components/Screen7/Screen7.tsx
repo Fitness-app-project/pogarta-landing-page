@@ -76,6 +76,8 @@ export const Screen7 = () => {
         y,
         borderTopLeftRadius: isDesktop ? '3vh' : '0',
         borderTopRightRadius: isDesktop ? '3vh' : '0',
+        borderBottomLeftRadius: isDesktop ? '3vh' : '0',
+        borderBottomRightRadius: isDesktop ? '3vh' : '0',
         zIndex: 10,
       }}
       onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => handleScreenClick(e)}

@@ -8,10 +8,7 @@ import { Screen4 } from '@/components/Screen4/Screen4';
 import { Screen7 } from '@/components/Screen7/Screen7';
 import { Footer } from '@/components/Footer/Footer';
 import { FooterBar } from '@/components/FooterBar/FooterBar';
-// import { ScreenTest } from '@/components/screen';
-
-import { isMobile, isDesktop } from 'react-device-detect'
-
+import { isMobile, isDesktop } from 'react-device-detect';
 
 const ScreensManager = () => {
   const screen1Ref = useRef<HTMLDivElement>(null);
@@ -22,7 +19,6 @@ const ScreensManager = () => {
   const [screen3Opacity, setScreen3Opacity] = useState(1);
   const [screen4Opacity, setScreen4Opacity] = useState(1);
   const [screen7Opacity, setScreen7Opacity] = useState(1);
-
 
   const handleScroll = () => {
     const windowHeight = window.innerHeight;
@@ -58,11 +54,9 @@ const ScreensManager = () => {
       setScreen7Opacity(1);
     }
   };
-  
-  
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -84,17 +78,16 @@ const ScreensManager = () => {
           <FooterBar/>
         </div>
       </>
-    )
+    );
   } else {
     return (
       <>
         <div style={{ zIndex: 1, position: 'sticky', top: 0, opacity: screen1Opacity }} ref={screen1Ref}>
-          {/* <ScreenTest/> */}
           <Menu/>
           <Screen1/>
           <Screen2/>
         </div>
-  
+
         <div 
           style={{ position: 'sticky', top:-700, zIndex: 1, opacity: screen3Opacity }}
           className="translate-x-[-25px] lg:translate-x-[0px]"
@@ -110,7 +103,7 @@ const ScreensManager = () => {
           <Screen4/>
         </div>
         <div 
-          style={{position: 'sticky', top:-100, zIndex: 1, opacity: screen7Opacity }} 
+          style={{position: 'sticky', top:-100, zIndex: 2, opacity: screen7Opacity, height:330 }} 
           className="translate-x-[-25px] lg:translate-x-[0px]"
           ref={screen7Ref}
         >
@@ -120,13 +113,12 @@ const ScreensManager = () => {
           style={{ zIndex: 1, position: 'sticky'}}
           className="translate-x-[-25px] lg:translate-x-[0px]"
         >
-          <Footer/>
+          <Footer/> 
           <FooterBar/>
         </div>
       </>
     );
   }
-
 };
 
 export default ScreensManager;

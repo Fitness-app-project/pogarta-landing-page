@@ -29,7 +29,7 @@ export const Footer = () => {
   });
 
   return (
-    <footer id="contact" className="bg-[#222222] w-screen px-10 pt-[8rem] pb-32 flex flex-col items-center gap-10 md:flex-row md:justify-center md:gap-52 lg:gap-0 lg:justify-between md:items-start" style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
+    <footer id="contact" className="bg-[#222222] w-screen px-10 pt-[8rem] pb-32 flex flex-col items-center gap-10 md:flex-row md:justify-center md:gap-52 lg:gap-0 lg:justify-between md:items-start">
 
       <div className="flex flex-col">
         <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest">Let&apos;s talk</h2>
