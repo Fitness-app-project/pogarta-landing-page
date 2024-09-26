@@ -126,10 +126,8 @@ export const Screen3 = () => {
               text2='Collaboratively, we expedite startup growth, propelling them towards international triumph.'
               icon={2}
             />
-            {isDesktop && (
-              <div className="mt-24 xl:mt-48"></div>
-            )}
-            <div className='flex items-center gap-10 mt-20 sm:mt-48 md:mt-64 lg:mt-52'>
+            
+            <div className='flex items-center gap-10 mt-30 sm:mt-48 md:mt-64 lg:mt-52'>
                 <h3 className="w-screen text-center font-medium text-[30px] xl:text-[40px] leading-[80px] text-white">Our portfolio in numbers</h3>
                 {/* <button className="btn buttonBgTransparent border-none w-[300px] h-[60px] text-[#747474]" style={{ borderRadius: "50px" }}>
                     Our projects
