@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { offers } from './OffersData';
+import ReactDOM from 'react-dom';
 
 interface Offer {
   title: string;
@@ -23,7 +24,8 @@ const Modal: React.FC<ModalProps> = ({ offer, handleClose }) => {
     }
   };
 
-  return (
+  const modalContent = (
+
     <motion.div
       className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center"
       onClick={handleBackgroundClick}
@@ -80,6 +82,11 @@ const Modal: React.FC<ModalProps> = ({ offer, handleClose }) => {
         </button>
       </motion.div>
     </motion.div>
+  );
+
+return ReactDOM.createPortal(
+    modalContent,
+    document.getElementById('modal-root') as HTMLElement
   );
 };
 
