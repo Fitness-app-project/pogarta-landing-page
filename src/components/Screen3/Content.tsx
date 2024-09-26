@@ -36,7 +36,7 @@ export const Content: React.FC<IProps> = ({ sequence, text1, text2, icon }) => {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 3 }}
                 viewport={{ once: true }}
-                className="pl-[110px] md:pl-[200px] lg:pl-[250px] xl:pl-[320px] pt-[30px]"
+                className="pl-[110px] md:pl-[200px] lg:pl-[250px] xl:pl-[320px]"
             >
 
                 <h3 className={`font-normal text-[35px] xl:text-[40px] leading-[80px] tracking-wide h-[130px] md:h-[150px] lg:h-[170px] ${isMobile && "h-[160px]"}`}>
