@@ -10,6 +10,7 @@ import LinkedInColor from "/public/images/Socials/linkedin-color.svg";
 import ClutchColor from "/public/images/Socials/Clutch.co-color.svg";
 import XColor from "/public/images/Socials/X-color.svg";
 import React, { useState } from "react"
+import { isDesktop } from "react-device-detect";
 
 
 export const Footer = () => {
@@ -32,7 +33,7 @@ export const Footer = () => {
     <footer id="contact" className="bg-[#222222] w-screen px-10 pt-[8rem] pb-32 flex flex-col items-center gap-10 md:flex-row md:justify-center md:gap-52 lg:gap-0 lg:justify-between md:items-start" style={{ borderTopLeftRadius: '3vh', borderTopRightRadius: '3vh' }}>
 
       <div className="flex flex-col">
-        <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest">Let&apos;s talk</h2>
+        <h2 className={`text-4xl font-semibold text-[#A98C53] uppercase tracking-widest ${isDesktop ? "pl-6" : ""}`}>Let&apos;s talk</h2>
 
               {/* <div className="flex items-center mt-10">
               <Image 
@@ -65,7 +66,7 @@ export const Footer = () => {
           </div>
       </div>
 
-      <div className="flex flex-col text-white">
+      <div className={`flex flex-col text-white ${isDesktop ? "pr-5" : ""}`}>
         <h2 className="text-4xl font-semibold text-[#A98C53] tracking-widest">Contact us:</h2>
 
         <p className="mt-10 text-xl ">
