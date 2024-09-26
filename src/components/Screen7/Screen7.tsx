@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BackgroundAnimation } from './Background';
 import Modal from './components/Modal';
@@ -13,6 +13,16 @@ export const Screen7 = () => {
     const [isModalOpen, setModalOpen] = useState(false);
     const [selectedOffer, setSelectedOffer] = useState(null);
 
+    useEffect(() => {
+        if (isModalOpen) {
+            const originalStyle = window.getComputedStyle(document.body).overflow;
+            document.body.style.overflow = 'hidden';
+            return () => {
+                document.body.style.overflow = originalStyle;
+            };
+        }
+    }, [isModalOpen]);
+    
     const chunkArray = (arr: any[], chunkSize: number) => {
         let results = [];
         while (arr.length) {
