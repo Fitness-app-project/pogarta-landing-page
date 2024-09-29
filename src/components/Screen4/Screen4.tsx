@@ -60,7 +60,7 @@ export const Screen4 = () => {
     };
   }, []);
 
-  const startFade = offsetTop + screenHeight - windowHeight;
+  const startFade = offsetTop + screenHeight - windowHeight*.9;
   const endFade = offsetTop + screenHeight *0.6;
 
   const opacity = useTransform(scrollY, [startFade, endFade], [0, 1]);
