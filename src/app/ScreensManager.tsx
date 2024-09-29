@@ -89,7 +89,7 @@ const ScreensManager = () => {
         </div>
 
         <div 
-          style={{ position: 'sticky', top:-700, zIndex: 1, opacity: screen3Opacity }}
+          style={{ position: 'sticky', top:-750, zIndex: 1, opacity: screen3Opacity }}
           className="translate-x-[-25px] lg:translate-x-[0px]"
           ref={screen3Ref}
         >

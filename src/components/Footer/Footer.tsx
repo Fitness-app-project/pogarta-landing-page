@@ -9,6 +9,8 @@ import LinkedInColor from "/public/images/Socials/linkedin-color.svg";
 import XColor from "/public/images/Socials/X-color.svg";
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { isDesktop } from "react-device-detect";
+
 
 export const Footer = () => {
   const [hoverFB, setHoverFB] = useState(false);
@@ -52,9 +54,7 @@ export const Footer = () => {
     };
   }, []);
 
-  // Opacity will be 0 until 3/4 of the footer is visible
   const startFade = footerTop + (footerHeight * 0.75) - windowHeight;
-  // Opacity will be 1 when the last pixel of the footer is visible
   const endFade = footerTop + footerHeight - windowHeight;
 
   const opacity = useTransform(scrollY, [startFade, endFade], [0, 1]);
@@ -70,6 +70,7 @@ export const Footer = () => {
         <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest">
           Let&apos;s talk
         </h2>
+
 
         <div className="flex flex-col justify-center">
           <div className="flex flex-wrap items-center mt-10">
@@ -137,6 +138,7 @@ export const Footer = () => {
         <h2 className="text-4xl font-semibold text-[#A98C53] tracking-widest">
           Contact us:
         </h2>
+
 
         <p className="mt-10 text-xl ">
           Custom Solutions for Your Specific Needs. <br />

@@ -17,6 +17,7 @@ export const Screen7 = () => {
   const [screenHeight, setScreenHeight] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
 
+
   const { scrollY } = useViewportScroll();
 
   useEffect(() => {
