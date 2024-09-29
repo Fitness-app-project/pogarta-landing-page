@@ -71,14 +71,12 @@ export const Screen7 = () => {
   const endTransform = offsetTop - windowHeight;
 
   // Animacja przesunięcia tylko dla komputerów (desktop)
-  const y = isDesktop
-    ? useTransform(
+  const y = useTransform(
         scrollY,
         [startTransform, endTransform],
         [0, -((endTransform - startTransform) * 0.5)],
         { clamp: false }
       )
-    : 0; // Brak animacji na urządzeniach mobilnych
 
   const handleScreenClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const target = e.target as HTMLElement;
@@ -105,7 +103,7 @@ export const Screen7 = () => {
         isDesktop ? "h-[110vh]" : "h-auto"
       } ${isDesktop ? "mt-[100vh]" : "0"} flex flex-col items-center justify-center screen7-background relative py-6`}
       style={{
-        y, // Używamy animacji przesunięcia tylko na desktopach
+        y: isDesktop ? y : 0,
         borderTopLeftRadius: isDesktop ? "3vh" : "0",
         borderTopRightRadius: isDesktop ? "3vh" : "0",
         borderBottomLeftRadius: isDesktop ? "3vh" : "0",

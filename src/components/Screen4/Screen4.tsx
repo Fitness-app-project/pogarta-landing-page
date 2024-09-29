@@ -71,9 +71,8 @@ export const Screen4 = () => {
   const startFade = offsetTop + screenHeight - windowHeight * 0.9;
   const endFade = offsetTop + screenHeight * 0.6;
 
-  const opacity = isDesktop
-    ? useTransform(scrollY, [startFade, endFade], [0, 1])
-    : 1; 
+  const opacity =  useTransform(scrollY, [startFade, endFade], [0, 1])
+  
 
   const companies = [
     {
@@ -193,7 +192,7 @@ export const Screen4 = () => {
       {isDesktop && (
         <motion.div
           className="absolute top-0 left-0 w-full h-full bg-[#212121] pointer-events-none"
-          style={{ opacity }}
+          style={{ opacity : isDesktop ? opacity : 1 }}
         />
       )}
     </div>
