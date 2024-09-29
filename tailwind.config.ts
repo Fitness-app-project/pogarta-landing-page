@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        droid: ['DisposableDroidBB', 'sans-serif'],
+      },
       height: {
         '142': '35.5rem',
         '252': '252px', 
