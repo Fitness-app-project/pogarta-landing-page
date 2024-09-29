@@ -6,13 +6,8 @@ const LoadingScreen = ({ onFinish }: { onFinish: () => void }) => {
   const [showError, setShowError] = useState(true);
   const [showJoking, setShowJoking] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
-  const [startGlitch, setStartGlitch] = useState(false); // Nowy stan dla efektu glitch
 
   useEffect(() => {
-    const glitchTimeout = setTimeout(() => {
-      setStartGlitch(true); // Aktywacja glitch na 500ms przed końcem 1 elementu
-    }, 3000);
-
     const jokeTimeout = setTimeout(() => {
       setShowError(false);
       setShowJoking(true);
@@ -23,7 +18,6 @@ const LoadingScreen = ({ onFinish }: { onFinish: () => void }) => {
     }, 7500);
 
     return () => {
-      clearTimeout(glitchTimeout);
       clearTimeout(jokeTimeout);
       clearTimeout(finishTimeout);
     };
@@ -38,19 +32,7 @@ const LoadingScreen = ({ onFinish }: { onFinish: () => void }) => {
       onAnimationComplete={() => fadeOut && onFinish()}
     >
       {showError && (
-        <motion.div
-          className="flex justify-center items-start max-w-4xl px-[5vh] pb-[40vh]"
-          animate={startGlitch ? {
-            opacity: [1, 0.8, 0.5, 0.8, 1], // Efekt glitch migania
-            x: [-5, 5, -10, 10, 0], // Przesunięcia poziome
-            scale: [1, 1.02, 0.98, 1.02, 1] // Zmiany skali
-          } : {}}
-          transition={{
-            duration: 0.5, // Czas trwania efektu glitch
-            ease: "easeInOut", // Płynność animacji
-            repeat: 1 // Efekt występuje raz przed końcem
-          }}
-        >
+        <div className="flex justify-center items-start max-w-4xl px-[5vh] pb-[40vh]"> {/* Zmniejszenie paddingu */}
           <div className="flex-grow">
             <div className="text-6xl font-bold">
               <span className="text-blue-600">G</span>
@@ -81,7 +63,7 @@ const LoadingScreen = ({ onFinish }: { onFinish: () => void }) => {
               className="w-40 h-40"
             />
           </div>
-        </motion.div>
+        </div>
       )}
 
       {showJoking && (
@@ -93,7 +75,7 @@ const LoadingScreen = ({ onFinish }: { onFinish: () => void }) => {
             ]}
             speed={80}
             wrapper="h1"
-            className="text-[200px] text-[#fff] font-droid tracking-tight"
+            className="text-[200px] text-[#fff] font-droid tracking-tight"  
             style={{
               transform: 'scaleY(1.5)',
               letterSpacing: '-0.05em',
