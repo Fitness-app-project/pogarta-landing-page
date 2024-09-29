@@ -84,7 +84,7 @@ const LoadingScreen = ({ onFinish }: { onFinish: () => void }) => {
             </div>
 
             <div className="mt-2 text-black">
-              The requested URL 'pogarta.com' was not found on this server. <br />
+              The requested URL 'https://www.pogarta.com/' was not found on this server. <br />
               <a className="text-gray-500">That’s all we know.</a>
             </div>
           </div>
