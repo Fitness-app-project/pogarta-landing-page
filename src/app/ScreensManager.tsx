@@ -9,16 +9,19 @@ import { Screen7 } from '@/components/Screen7/Screen7';
 import { Footer } from '@/components/Footer/Footer';
 import { FooterBar } from '@/components/FooterBar/FooterBar';
 import { isMobile, isDesktop } from 'react-device-detect';
+import LoadingScreen from '@/components/LoadingScreen/LoadingScreen404';
 
 const ScreensManager = () => {
   const screen1Ref = useRef<HTMLDivElement>(null);
   const screen3Ref = useRef<HTMLDivElement>(null);
   const screen4Ref = useRef<HTMLDivElement>(null);
   const screen7Ref = useRef<HTMLDivElement>(null);
+
   const [screen1Opacity, setScreen1Opacity] = useState(1);
   const [screen3Opacity, setScreen3Opacity] = useState(1);
   const [screen4Opacity, setScreen4Opacity] = useState(1);
   const [screen7Opacity, setScreen7Opacity] = useState(1);
+  const [loading, setLoading] = useState(true); 
 
   const handleScroll = () => {
     const windowHeight = window.innerHeight;
@@ -62,20 +65,28 @@ const ScreensManager = () => {
     };
   }, []);
 
-  if(isMobile) {
+  const handleLoadingFinish = () => {
+    setLoading(false);
+  };
+
+  if (loading) {
+    return <LoadingScreen onFinish={handleLoadingFinish} />;
+  }
+
+  if (isMobile) {
     return (
       <>
         <div className='h-[100vh]'>
-          <Menu/>
-          <Screen1/>
-          <Screen2/>
+          <Menu />
+          <Screen1 />
+          <Screen2 />
         </div>
-        <Screen3/>
-        <Screen4/>
-        <Screen7/>
+        <Screen3 />
+        <Screen4 />
+        <Screen7 />
         <div>
-          <Footer/>
-          <FooterBar/>
+          <Footer />
+          <FooterBar />
         </div>
       </>
     );
@@ -83,38 +94,38 @@ const ScreensManager = () => {
     return (
       <>
         <div style={{ zIndex: 1, position: 'sticky', top: 0, opacity: screen1Opacity }} ref={screen1Ref}>
-          <Menu/>
-          <Screen1/>
-          <Screen2/>
+          <Menu />
+          <Screen1 />
+          <Screen2 />
         </div>
 
         <div 
-          style={{ position: 'sticky', top:-750, zIndex: 1, opacity: screen3Opacity }}
+          style={{ position: 'sticky', top: -750, zIndex: 1, opacity: screen3Opacity }}
           className="translate-x-[-25px] lg:translate-x-[0px]"
           ref={screen3Ref}
         >
-          <Screen3/>
+          <Screen3 />
         </div>
         <div
-          style={{position: 'sticky', top:-1000 , zIndex: 1, opacity: screen4Opacity }}
+          style={{ position: 'sticky', top: -1000, zIndex: 1, opacity: screen4Opacity }}
           className="translate-x-[-25px] lg:translate-x-[0px]"
           ref={screen4Ref}
         >
-          <Screen4/>
+          <Screen4 />
         </div>
         <div 
-          style={{position: 'sticky', top:-100, zIndex: 2, opacity: screen7Opacity, height:330 }} 
+          style={{ position: 'sticky', top: -100, zIndex: 2, opacity: screen7Opacity, height: 330 }} 
           className="translate-x-[-25px] lg:translate-x-[0px]"
           ref={screen7Ref}
         >
-          <Screen7/>
+          <Screen7 />
         </div>
         <div
-          style={{ zIndex: 1, position: 'sticky'}}
+          style={{ zIndex: 1, position: 'sticky' }}
           className="translate-x-[-25px] lg:translate-x-[0px]"
         >
-          <Footer/> 
-          <FooterBar/>
+          <Footer /> 
+          <FooterBar />
         </div>
       </>
     );
