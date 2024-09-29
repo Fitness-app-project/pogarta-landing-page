@@ -69,7 +69,7 @@ const ScreensManager = () => {
     setLoading(false);
   };
 
-  if (loading) {
+  if (loading && isDesktop) {
     return <LoadingScreen onFinish={handleLoadingFinish} />;
   }
 
