@@ -136,6 +136,7 @@ export const Screen1 = () => {
             initial={animation}
             animate={animation}
           >
+          {/* test */}
             <Image src={pogartaLogo3} alt='Logo' width={500} height={500} />
           </motion.div>
         )}
