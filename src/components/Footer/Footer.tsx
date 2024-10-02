@@ -9,7 +9,7 @@ import LinkedInColor from "/public/images/Socials/linkedin-color.svg";
 import XColor from "/public/images/Socials/X-color.svg";
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
-import { isDesktop } from "react-device-detect"; // Import isDesktop to detect device type
+import { isDesktop } from "react-device-detect";
 
 export const Footer = () => {
   const [hoverFB, setHoverFB] = useState(false);
@@ -56,7 +56,6 @@ export const Footer = () => {
   const startFade = footerTop + (footerHeight * 0.75) - windowHeight;
   const endFade = footerTop + footerHeight - windowHeight;
 
-  // Tylko dla komputerów animacja fade, dla mobilnych opacity = 1
   const opacity = useTransform(scrollY, [startFade, endFade], [0, 1])
     
 
@@ -65,10 +64,10 @@ export const Footer = () => {
       ref={footerRef}
       id="contact"
       className="bg-[#222222] w-screen px-10 pt-[8rem] pb-32 flex flex-col items-center gap-10 md:flex-row md:justify-center md:gap-52 lg:gap-0 lg:justify-between md:items-start"
-      style={{ opacity: isDesktop ? opacity : 1 }} // Opacity animowane tylko na komputerach
+      style={{ opacity: isDesktop ? opacity : 1 }}
     >
       <div className="flex flex-col">
-        <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest">
+        <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest pl-6">
           Let&apos;s talk
         </h2>
 
@@ -134,8 +133,8 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-col text-white">
-        <h2 className="text-4xl font-semibold text-[#A98C53] tracking-widest">
+      <div className="flex flex-col text-white pr-7">
+        <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest">
           Contact us:
         </h2>
 
