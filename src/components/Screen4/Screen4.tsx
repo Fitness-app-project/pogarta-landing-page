@@ -18,7 +18,7 @@ const CompanyCell = ({
   altText: string;
   disableHover: boolean;  
 }) => {
-  const [isHovered, setIsHovered] = useState(false); // Śledzimy stan hover
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
@@ -28,8 +28,8 @@ const CompanyCell = ({
       viewport={{ once: true }}
       whileHover={disableHover || isMobile ? {} : { scale: 1.2, transition: { duration: 0.3 }, zIndex: 2 }}
       className="flex flex-col items-center text-center p-4 mt-10"
-      onHoverStart={() => setIsHovered(true)}  // Ustawiamy hover na true
-      onHoverEnd={() => setIsHovered(false)}   // Resetujemy hover na false
+      onHoverStart={() => setIsHovered(true)} 
+      onHoverEnd={() => setIsHovered(false)}   
     >
       <motion.div
         className="relative flex justify-center items-center w-32 h-32"
@@ -39,12 +39,15 @@ const CompanyCell = ({
         <Image src={logo} alt={altText} layout="fill" objectFit="contain" />
       </motion.div>
 
-      {/* Stała wysokość dla tekstu, aby nie zmieniała się wysokość kontenera */}
       <div className="mt-2 flex flex-col items-center text-center p-4" style={{ height: "20px" }}>
-        {/* Wyświetlamy tekst zawsze na mobilnych lub w trakcie hover na desktopie */}
-        {(isHovered || isMobile) && (
-          <p className="text-[#383838] text-xs">{text}</p>
-        )}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isHovered || isMobile ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-[#383838] text-xs"
+        >
+          {text}
+        </motion.p>
       </div>
     </motion.div>
   );
