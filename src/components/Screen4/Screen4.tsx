@@ -11,10 +11,12 @@ const CompanyCell = ({
   logo,
   text,
   altText,
+  disableHover,  
 }: {
   logo: string;
   text: string;
   altText: string;
+  disableHover: boolean;  
 }) => {
   return (
     <motion.div
@@ -22,7 +24,7 @@ const CompanyCell = ({
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1 }}
       viewport={{ once: true }}
-      whileHover={{ scale: 1.2, transition: { duration: 0.3 }, zIndex: 2 }}
+      whileHover={disableHover ? {} : { scale: 1.2, transition: { duration: 0.3 }, zIndex: 2 }}
       className="flex flex-col items-center text-center p-4 mt-10"
     >
       <motion.div
@@ -45,6 +47,7 @@ export const Screen4 = () => {
   const [offsetTop, setOffsetTop] = useState(0);
   const [screenHeight, setScreenHeight] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
+  const [disableHover, setDisableHover] = useState(false);  
 
   const { scrollY } = useViewportScroll();
 
@@ -71,8 +74,23 @@ export const Screen4 = () => {
   const startFade = offsetTop + screenHeight - windowHeight * 0.9;
   const endFade = offsetTop + screenHeight * 0.6;
 
-  const opacity =  useTransform(scrollY, [startFade, endFade], [0, 1])
-  
+  const opacity = useTransform(scrollY, [startFade, endFade], [0, 1]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= startFade) {
+        setDisableHover(true);
+      } else {
+        setDisableHover(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [startFade]);
 
   const companies = [
     {
@@ -185,6 +203,7 @@ export const Screen4 = () => {
             logo={company.logo}
             text={company.text}
             altText={company.altText}
+            disableHover={disableHover}  
           />
         ))}
       </div>
@@ -192,10 +211,9 @@ export const Screen4 = () => {
       {isDesktop && (
         <motion.div
           className="absolute top-0 left-0 w-full h-full bg-[#212121] pointer-events-none"
-          style={{ opacity : isDesktop ? opacity : 1 }}
+          style={{ opacity: isDesktop ? opacity : 1 }}
         />
       )}
     </div>
-    //test
   );
 };
