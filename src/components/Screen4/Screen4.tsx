@@ -2,7 +2,7 @@
 
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { isDesktop } from "react-device-detect";
+import { isDesktop, isMobile } from "react-device-detect";
 import { useRef, useEffect, useState } from "react";
 
 const imagePath = "/images/Screen4images/";
@@ -18,14 +18,18 @@ const CompanyCell = ({
   altText: string;
   disableHover: boolean;  
 }) => {
+  const [isHovered, setIsHovered] = useState(false); // Śledzimy stan hover
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1 }}
       viewport={{ once: true }}
-      whileHover={disableHover ? {} : { scale: 1.2, transition: { duration: 0.3 }, zIndex: 2 }}
+      whileHover={disableHover || isMobile ? {} : { scale: 1.2, transition: { duration: 0.3 }, zIndex: 2 }}
       className="flex flex-col items-center text-center p-4 mt-10"
+      onHoverStart={() => setIsHovered(true)}  // Ustawiamy hover na true
+      onHoverEnd={() => setIsHovered(false)}   // Resetujemy hover na false
     >
       <motion.div
         className="relative flex justify-center items-center w-32 h-32"
@@ -35,8 +39,12 @@ const CompanyCell = ({
         <Image src={logo} alt={altText} layout="fill" objectFit="contain" />
       </motion.div>
 
-      <div className="mt-2 flex flex-col items-center text-center p-4">
-        <p className="text-[#383838] text-xs">{text}</p>
+      {/* Stała wysokość dla tekstu, aby nie zmieniała się wysokość kontenera */}
+      <div className="mt-2 flex flex-col items-center text-center p-4" style={{ height: "20px" }}>
+        {/* Wyświetlamy tekst zawsze na mobilnych lub w trakcie hover na desktopie */}
+        {(isHovered || isMobile) && (
+          <p className="text-[#383838] text-xs">{text}</p>
+        )}
       </div>
     </motion.div>
   );
