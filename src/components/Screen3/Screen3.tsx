@@ -68,7 +68,7 @@ const ContentLine = ({ content }: { content: string }) => {
         offset: ["end center", "start start"]
     })
 
-    const scrollValue = useTransform(scrollYProgress, [0, 0.15], ['100%', '0%'])
+    const scrollValue = useTransform(scrollYProgress, [0, 0.2], ['100%', '0%'])
 
     const clipPathVal = useMotionTemplate`inset(0% ${scrollValue} 0% 0%)`
   
@@ -76,10 +76,10 @@ const ContentLine = ({ content }: { content: string }) => {
       <span className="relative block" ref={contentRef}>
         <motion.span
             style={{ clipPath: clipPathVal }}
-            className="highlighted-text absolute left-0 z-0 text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-normal leading-[78px] tracking-wide text-white"
+            className={` ${isMobile ? "highlighted-text absolute left-0 z-0 text-2xl font-normal leading-[48px] tracking-wide text-white " : "highlighted-text absolute left-0 z-0 text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-normal leading-[78px] tracking-wide text-white "}  `}
             data-text={content}
         />
-        <span className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl font-normal leading-[78px] tracking-wide text-[#747474]">
+        <span className={` ${isMobile ? "text-2xl leading-[48px] tracking-wide text-[#747474]" : "text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl font-normal leading-[78px] tracking-wide text-[#747474] }"} `}>
             {content}
         </span>
       </span>

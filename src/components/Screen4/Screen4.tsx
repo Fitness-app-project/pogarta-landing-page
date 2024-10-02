@@ -2,7 +2,7 @@
 
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { isDesktop } from "react-device-detect";
+import { isDesktop, isMobile } from "react-device-detect";
 import { useRef, useEffect, useState } from "react";
 
 const imagePath = "/images/Screen4images/";
@@ -11,19 +11,25 @@ const CompanyCell = ({
   logo,
   text,
   altText,
+  disableHover,  
 }: {
   logo: string;
   text: string;
   altText: string;
+  disableHover: boolean;  
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1 }}
       viewport={{ once: true }}
-      whileHover={{ scale: 1.2, transition: { duration: 0.3 }, zIndex: 2 }}
+      whileHover={disableHover || isMobile ? {} : { scale: 1.2, transition: { duration: 0.3 }, zIndex: 2 }}
       className="flex flex-col items-center text-center p-4 mt-10"
+      onHoverStart={() => setIsHovered(true)} 
+      onHoverEnd={() => setIsHovered(false)}   
     >
       <motion.div
         className="relative flex justify-center items-center w-32 h-32"
@@ -33,8 +39,15 @@ const CompanyCell = ({
         <Image src={logo} alt={altText} layout="fill" objectFit="contain" />
       </motion.div>
 
-      <div className="mt-2 flex flex-col items-center text-center p-4">
-        <p className="text-[#383838] text-xs">{text}</p>
+      <div className="mt-2 flex flex-col items-center text-center p-4" style={{ height: "20px" }}>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isHovered || isMobile ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-[#383838] text-xs"
+        >
+          {text}
+        </motion.p>
       </div>
     </motion.div>
   );
@@ -45,6 +58,7 @@ export const Screen4 = () => {
   const [offsetTop, setOffsetTop] = useState(0);
   const [screenHeight, setScreenHeight] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
+  const [disableHover, setDisableHover] = useState(false);  
 
   const { scrollY } = useViewportScroll();
 
@@ -71,8 +85,23 @@ export const Screen4 = () => {
   const startFade = offsetTop + screenHeight - windowHeight * 0.9;
   const endFade = offsetTop + screenHeight * 0.6;
 
-  const opacity =  useTransform(scrollY, [startFade, endFade], [0, 1])
-  
+  const opacity = useTransform(scrollY, [startFade, endFade], [0, 1]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= startFade) {
+        setDisableHover(true);
+      } else {
+        setDisableHover(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [startFade]);
 
   const companies = [
     {
@@ -185,6 +214,7 @@ export const Screen4 = () => {
             logo={company.logo}
             text={company.text}
             altText={company.altText}
+            disableHover={disableHover}  
           />
         ))}
       </div>
@@ -192,10 +222,9 @@ export const Screen4 = () => {
       {isDesktop && (
         <motion.div
           className="absolute top-0 left-0 w-full h-full bg-[#212121] pointer-events-none"
-          style={{ opacity : isDesktop ? opacity : 1 }}
+          style={{ opacity: isDesktop ? opacity : 1 }}
         />
       )}
     </div>
-    //test
   );
 };
