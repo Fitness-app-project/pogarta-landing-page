@@ -21,14 +21,14 @@ export const Content: React.FC<IProps> = ({ sequence, text1, text2, icon }) => {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 3 }}
                 viewport={{ once: true }}
-                className='absolute left-[-140px] lg:left-[-80px] xl:left-0'
+                className='absolute left-[-140px] lg:left-[-80px] xl:left-0 '
             >
                 <Image
                     alt='Coin'
                     src={`/images/coin${icon}.png`}
                     width={400}
                     height={400}
-                    className="scale-[0.4] md:scale-75 xl:scale-100"
+                    className="scale-[0.4] md:scale-75 xl:scale-100 justify-center self-center text-center "
                 />
             </motion.div>
             <motion.div
@@ -39,7 +39,7 @@ export const Content: React.FC<IProps> = ({ sequence, text1, text2, icon }) => {
                 className="pl-[110px] md:pl-[200px] lg:pl-[250px] xl:pl-[320px]"
             >
 
-                <h3 className={`font-normal text-[35px] xl:text-[40px] leading-[80px] tracking-wide h-[130px] md:h-[150px] lg:h-[170px] ${isMobile && "h-[160px]"}`}>
+                <h3 className={`font-normal text-[35px] xl:text-[40px] leading-[3.5rem] tracking-wide h-[8rem]  ${isMobile && "h-[160px]"}`}>
                     Building{" "} <br />
                     <TypeAnimation
                         sequence={sequence}
