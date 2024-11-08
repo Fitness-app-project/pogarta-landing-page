@@ -76,10 +76,10 @@ const ContentLine = ({ content }: { content: string }) => {
       <span className="relative block" ref={contentRef}>
         <motion.span
             style={{ clipPath: clipPathVal }}
-            className={` ${isMobile ? "highlighted-text absolute left-0 z-0 text-2xl font-normal leading-[48px] tracking-wide text-white " : "highlighted-text absolute left-0 z-0 text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-normal leading-[78px] tracking-wide text-white "}  `}
+            className={` ${isMobile ? "highlighted-text absolute left-0 z-0 text-2xl font-normal leading-[40px] tracking-wide text-white" : "highlighted-text absolute left-0 z-0 text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-normal leading-[78px] tracking-wide text-white "}  `}
             data-text={content}
         />
-        <span className={` ${isMobile ? "text-2xl leading-[48px] tracking-wide text-[#747474]" : "text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl font-normal leading-[78px] tracking-wide text-[#747474] }"} `}>
+        <span className={` ${isMobile ? "text-2xl leading-[40px] tracking-wide text-[#747474]" : "text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl font-normal leading-[78px] tracking-wide text-[#747474] }"} `}>
             {content}
         </span>
       </span>
@@ -91,7 +91,7 @@ export const Screen3 = () => {
 
     return (
       <div className="top-0 z-50">
-        <div id="about" className={`w-screen ${isDesktop ? "h-[180vh]" : "h-auto"} py-12 sm:px-12 md:px-24 lg:px-32 xl:px-40 2xl:px-64 screen3-background`} style={{ borderTopLeftRadius: isDesktop ? '3vh' : '0', borderTopRightRadius: isDesktop ? '3vh' : '0', marginTop: isDesktop ? '0vh' : '10vh' }}>
+        <div id="about" className={`w-screen ${isDesktop ? "h-[180vh] py-12" : "h-auto py-6"} sm:px-12 md:px-24 lg:px-32 xl:px-40 2xl:px-64 screen3-background`} style={{ borderTopLeftRadius: isDesktop ? '3vh' : '0', borderTopRightRadius: isDesktop ? '3vh' : '0', marginTop: isDesktop ? '0vh' : '10vh' }}>
 
             <div>
               {isDesktop ? (
@@ -127,8 +127,8 @@ export const Screen3 = () => {
               icon={2}
             />
 <div className="min-h-16"></div>
-          <div className='flex items-center gap-10 mt-30 sm:mt-20 md:mt-32 lg:mt-40 xl:mt-48'>
-                <h3 className="w-screen text-center font-medium text-[30px] xl:text-[40px] leading-[80px] text-white">Our portfolio in numbers</h3>
+          <div className={`${isMobile ? 'flex items-center gap-10 mt-[42px] sm:mt-20 md:mt-32 lg:mt-40 xl:mt-48' : 'flex items-center gap-10 mt-30 sm:mt-20 md:mt-32 lg:mt-40 xl:mt-48'}`}>
+                <h3 className={`${isMobile ? "w-screen text-center font-medium text-[27px] leading-[80px] text-white pb-5" : "w-screen text-center font-medium text-[30px] xl:text-[40px] leading-[80px] text-white"}`}>Our portfolio in numbers</h3>
                 {/* <button className="btn buttonBgTransparent border-none w-[300px] h-[60px] text-[#747474]" style={{ borderRadius: "50px" }}>
                     Our projects
                     <FaLongArrowAltRight size={32} />
