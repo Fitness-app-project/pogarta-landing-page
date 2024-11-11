@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import scrollLock from 'scroll-lock';
 import {
   motion,
   AnimatePresence,
@@ -11,7 +12,7 @@ import { BackgroundAnimation } from "./Background";
 import Modal from "./components/Modal";
 import { offers } from "./components/OffersData";
 import { TypeAnimation } from "react-type-animation";
-import { isDesktop } from "react-device-detect";
+import { isDesktop, isMobile } from "react-device-detect";
 
 export const Screen7 = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -24,25 +25,21 @@ export const Screen7 = () => {
 
   const { scrollY } = useViewportScroll();
 
-  // Funkcja do blokowania scrolla
   const disableScroll = () => {
-    document.body.style.overflow = "hidden";
+    scrollLock.disablePageScroll();
   };
-
-  // Funkcja do odblokowania scrolla
+  
   const enableScroll = () => {
-    document.body.style.overflow = "auto";
+    scrollLock.enablePageScroll();
   };
-
-  // Kiedy modal się otwiera, blokujemy scrollowanie, a jak się zamyka, odblokowujemy
+  
   useEffect(() => {
     if (isModalOpen) {
       disableScroll();
     } else {
       enableScroll();
     }
-
-    // Czyszczenie po odmontowaniu komponentu
+  
     return () => enableScroll();
   }, [isModalOpen]);
 
@@ -70,7 +67,6 @@ export const Screen7 = () => {
   const startTransform = offsetTop * 0.5 - windowHeight;
   const endTransform = offsetTop - windowHeight;
 
-  // Animacja przesunięcia tylko dla komputerów (desktop)
   const y = useTransform(
         scrollY,
         [startTransform, endTransform],
@@ -101,7 +97,9 @@ export const Screen7 = () => {
       ref={screen7Ref}
       className={`w-screen ${
         isDesktop ? "h-[110vh]" : "h-auto"
-      } ${isDesktop ? "mt-[100vh]" : "0"} flex flex-col items-center justify-center screen7-background relative py-6`}
+      } ${isDesktop ? "mt-[100vh]" : ""} flex flex-col items-center justify-center screen7-background relative ${
+        isDesktop ? "py-6" : "py-2"
+      }`}
       style={{
         y: isDesktop ? y : 0,
         borderTopLeftRadius: isDesktop ? "3vh" : "0",
@@ -114,13 +112,15 @@ export const Screen7 = () => {
         handleScreenClick(e)
       }
     >
-      {isDesktop && (
-        <div className="w-screen h-[110vh] absolute">
+      {/* {isDesktop && ( */}
+        <div className={`${isDesktop ? "w-screen h-[110vh] absolute" : "w-screen h-[180vh] absolute"}`}>
           <BackgroundAnimation />
         </div>
-      )}
+      {/* )} */}
       <h1 className="text-[#D9B55E] mb-0 md:mb-6 lg:mb-20 z-30 relative">
-        <h3 className="text-3xl md:text-5xl 2xl:text-6xl font-normal leading-[80px] tracking-wide">
+        <h3 className={`${
+          isDesktop ? "text-3xl md:text-5xl 2xl:text-6xl" : "text-2xl"
+        } font-normal leading-[80px] tracking-wide`}>
           <TypeAnimation
             sequence={["Current job offers"]}
             wrapper="span"
@@ -129,37 +129,51 @@ export const Screen7 = () => {
           />
         </h3>
       </h1>
-      <div className="w-screen grid grid-cols-1 lg:grid-cols-2 gap-8 md:px-16 lg:px-4 xl:px-16 2xl:px-40">
+      <div className={`w-screen grid grid-cols-1 lg:grid-cols-2 gap-8 ${
+        isDesktop ? "md:px-16 lg:px-4 xl:px-16 2xl:px-40" : "px-4"
+      }`}>
         {offers.map((offer, index) => (
           <motion.div
             key={index}
-            className={`bg-black bg-opacity-50 sm:p-10 ${
-              isDesktop ? "rounded-full p-6" : "py-4 pr-1"
-            } flex items-center space-x-4 w-auto z-30`}
+            className={`bg-black bg-opacity-50 ${
+              isDesktop ? "sm:p-10 rounded-full p-6" : "p-8 rounded-[4rem] mx-2"
+            } flex items-center space-x-4 w-auto z-30 ${isDesktop ? "mb-8" : "mb-4"}`}
             variants={itemVariants}
             whileHover={
               isDesktop
                 ? { scale: 1.05, transition: { duration: 0.2 } }
-                : undefined // Hover tylko dla komputerów
+                : undefined 
             }
           >
-            <div className="flex-1 ml-10">
-              <h2 className="text-2xl text-[#D9B55E]">{offer.title}</h2>
-              <p className="text-[#B7B7B7] text-lg">{offer.details}</p>
+            <div className={`flex-1 ${isDesktop ? "ml-10" : "ml-0"}`}>
+              <h2 className={`${
+                isDesktop ? "text-2xl" : "text-xl"
+              } text-[#D9B55E] ${!isDesktop && "text-left"}`}>{offer.title}</h2>
+              <p className={`${
+                isDesktop ? "text-lg" : "text-base"
+              } text-[#B7B7B7] ${!isDesktop && "text-left"}`}>{offer.details}</p>
+              {!isDesktop && (
+                <motion.button
+                  whileHover={{ scale: 1.1, backgroundColor: "#616161" }}
+                  className="bg-[#747474] bg-opacity-30 hover:bg-gray-600 text-[#D9B55E] py-3 px-3 rounded-full transition duration-300 mt-6 mx-auto block"
+                  onClick={() => handleFindOutMore(offer)}
+                  style={{ marginLeft: "auto", marginRight: 'auto'}}
+                >
+                  Find Out More →
+                </motion.button>
+              )}
             </div>
-            <div className="ml-auto">
-              <motion.button
-                whileHover={
-                  isDesktop
-                    ? { scale: 1.1, backgroundColor: "#616161" }
-                    : undefined
-                }
-                className="bg-[#747474] bg-opacity-30 hover:bg-gray-600 text-[#D9B55E] py-3 px-6 rounded-full transition duration-300 ml-5"
-                onClick={() => handleFindOutMore(offer)}
-              >
-                Find Out More →
-              </motion.button>
-            </div>
+            {isDesktop && (
+              <div className="ml-auto">
+                <motion.button
+                  whileHover={{ scale: 1.1, backgroundColor: "#616161" }}
+                  className="bg-[#747474] bg-opacity-30 hover:bg-gray-600 text-[#D9B55E] py-3 px-6 rounded-full transition duration-300 ml-5"
+                  onClick={() => handleFindOutMore(offer)}
+                >
+                  Find Out More →
+                </motion.button>
+              </div>
+            )}
           </motion.div>
         ))}
       </div>
@@ -172,11 +186,14 @@ export const Screen7 = () => {
               jobDescription: (selectedOffer as any)?.jobDescription || [],
               basicRequirements: (selectedOffer as any)?.basicRequirements || [],
               niceToHave: (selectedOffer as any)?.niceToHave || [],
+              disableScroll: true
             }}
             handleClose={() => setModalOpen(false)}
+            isMobile={isMobile}
           />
         )}
       </AnimatePresence>
     </motion.div>
   );
 };
+
