@@ -113,7 +113,7 @@ export const Screen7 = () => {
       }
     >
       {/* {isDesktop && ( */}
-        <div className={`${isDesktop ? "w-screen h-[110vh] absolute" : "w-screen h-[180vh] absolute"}`}>
+        <div className={`${isDesktop ? "w-screen h-[110vh] absolute" : "w-screen h-[198vh] absolute"}`}>
           <BackgroundAnimation />
         </div>
       {/* )} */}
