@@ -9,7 +9,7 @@ import LinkedInColor from "/public/images/Socials/linkedin-color.svg";
 import XColor from "/public/images/Socials/X-color.svg";
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
-import { isDesktop } from "react-device-detect";
+import { isDesktop, isMobile } from "react-device-detect";
 
 export const Footer = () => {
   const [hoverFB, setHoverFB] = useState(false);
@@ -56,84 +56,85 @@ export const Footer = () => {
   const startFade = footerTop + (footerHeight * 0.75) - windowHeight;
   const endFade = footerTop + footerHeight - windowHeight;
 
-  const opacity = useTransform(scrollY, [startFade, endFade], [0, 1])
-    
+  const opacity = useTransform(scrollY, [startFade, endFade], [0, 1]);
 
   return (
     <motion.footer
       ref={footerRef}
       id="contact"
-      className="bg-[#222222] w-screen px-10 pt-[8rem] pb-32 flex flex-col items-center gap-10 md:flex-row md:justify-center md:gap-52 lg:gap-0 lg:justify-between md:items-start"
+      className={`bg-[#222222] w-screen px-10 pt-[8rem] flex flex-col items-center gap-10 md:flex-row md:justify-center md:gap-52 lg:gap-0 lg:justify-between md:items-start ${isDesktop ? "pb-32" : "pb-[11rem]"}`}
       style={{ opacity: isDesktop ? opacity : 1 }}
     >
-      <div className="flex flex-col">
-        <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest pl-6">
-          Let&apos;s talk
-        </h2>
+      {!isMobile && (
+        <div className="flex flex-col">
+          <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest pl-6">
+            Let&apos;s talk
+          </h2>
 
-        <div className="flex flex-col justify-center">
-          <div className="flex flex-wrap items-center mt-10">
-            <a
-              href="https://www.facebook.com/people/Pogarta/61556942754758/"
-              target="_blank"
-              onMouseEnter={() => setHoverFB(true)}
-              onMouseLeave={() => setHoverFB(false)}
-            >
-              <Image
-                alt="FB"
-                src={hoverFB ? FBColor : FB}
-                width={100}
-                height={100}
-                style={imageStyle(hoverFB)}
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/pogarta.softwarehouse/"
-              target="_blank"
-              onMouseEnter={() => setHoverIG(true)}
-              onMouseLeave={() => setHoverIG(false)}
-            >
-              <Image
-                alt="IG"
-                src={hoverIG ? IGColor : IG}
-                width={100}
-                height={100}
-                style={imageStyle(hoverIG)}
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/pogarta/"
-              target="_blank"
-              onMouseEnter={() => setHoverLinkedIn(true)}
-              onMouseLeave={() => setHoverLinkedIn(false)}
-            >
-              <Image
-                alt="LinkedIn"
-                src={hoverLinkedIn ? LinkedInColor : LinkedIn}
-                width={100}
-                height={100}
-                style={imageStyle(hoverLinkedIn)}
-              />
-            </a>
-            <a
-              href="https://twitter.com/Pogarta_"
-              target="_blank"
-              onMouseEnter={() => setHoverX(true)}
-              onMouseLeave={() => setHoverX(false)}
-            >
-              <Image
-                alt="X"
-                src={hoverX ? XColor : X}
-                width={100}
-                height={100}
-                style={imageStyle2(hoverX)}
-              />
-            </a>
+          <div className="flex flex-col justify-center">
+            <div className="flex flex-wrap items-center mt-10">
+              <a
+                href="https://www.facebook.com/people/Pogarta/61556942754758/"
+                target="_blank"
+                onMouseEnter={() => setHoverFB(true)}
+                onMouseLeave={() => setHoverFB(false)}
+              >
+                <Image
+                  alt="FB"
+                  src={hoverFB ? FBColor : FB}
+                  width={100}
+                  height={100}
+                  style={imageStyle(hoverFB)}
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/pogarta.softwarehouse/"
+                target="_blank"
+                onMouseEnter={() => setHoverIG(true)}
+                onMouseLeave={() => setHoverIG(false)}
+              >
+                <Image
+                  alt="IG"
+                  src={hoverIG ? IGColor : IG}
+                  width={100}
+                  height={100}
+                  style={imageStyle(hoverIG)}
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/pogarta/"
+                target="_blank"
+                onMouseEnter={() => setHoverLinkedIn(true)}
+                onMouseLeave={() => setHoverLinkedIn(false)}
+              >
+                <Image
+                  alt="LinkedIn"
+                  src={hoverLinkedIn ? LinkedInColor : LinkedIn}
+                  width={100}
+                  height={100}
+                  style={imageStyle(hoverLinkedIn)}
+                />
+              </a>
+              <a
+                href="https://twitter.com/Pogarta_"
+                target="_blank"
+                onMouseEnter={() => setHoverX(true)}
+                onMouseLeave={() => setHoverX(false)}
+              >
+                <Image
+                  alt="X"
+                  src={hoverX ? XColor : X}
+                  width={100}
+                  height={100}
+                  style={imageStyle2(hoverX)}
+                />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <div className="flex flex-col text-white pr-7">
+      <div className={`flex flex-col text-white pr-7 ${isMobile ? 'mt-[-4rem] ' : ''}`}>
         <h2 className="text-4xl font-semibold text-[#A98C53] uppercase tracking-widest">
           Contact us:
         </h2>
@@ -146,6 +147,67 @@ export const Footer = () => {
         <div className="flex flex-col gap-4 font-bold text-xl mt-2">
           <span>hello@pogarta.com</span>
         </div>
+
+        {isMobile && (
+          <div className="flex justify-center items-center space-x-0 absolute self-center text-center pl-8 mt-[19rem]">
+            <a
+              href="https://www.facebook.com/people/Pogarta/61556942754758/"
+              target="_blank"
+              onMouseEnter={() => setHoverFB(true)}
+              onMouseLeave={() => setHoverFB(false)}
+            >
+              <Image
+                alt="FB"
+                src={hoverFB ? FBColor : FB}
+                width={150}
+                height={150}
+                style={imageStyle(hoverFB)}
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/pogarta.softwarehouse/"
+              target="_blank"
+              onMouseEnter={() => setHoverIG(true)}
+              onMouseLeave={() => setHoverIG(false)}
+            >
+              <Image
+                alt="IG"
+                src={hoverIG ? IGColor : IG}
+                width={150}
+                height={150}
+                style={imageStyle(hoverIG)}
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/pogarta/"
+              target="_blank"
+              onMouseEnter={() => setHoverLinkedIn(true)}
+              onMouseLeave={() => setHoverLinkedIn(false)}
+            >
+              <Image
+                alt="LinkedIn"
+                src={hoverLinkedIn ? LinkedInColor : LinkedIn}
+                width={150}
+                height={150}
+                style={imageStyle(hoverLinkedIn)}
+              />
+            </a>
+            <a
+              href="https://twitter.com/Pogarta_"
+              target="_blank"
+              onMouseEnter={() => setHoverX(true)}
+              onMouseLeave={() => setHoverX(false)}
+            >
+              <Image
+                alt="X"
+                src={hoverX ? XColor : X}
+                width={150}
+                height={150}
+                style={imageStyle2(hoverX)}
+              />
+            </a>
+          </div>
+        )}
       </div>
     </motion.footer>
   );
